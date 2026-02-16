@@ -468,6 +468,7 @@ script = ExtResource("1_70ait")
 shape = SubResource("CapsuleShape2D_2q3ad")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=2025332202]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_aowxt")
