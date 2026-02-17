@@ -490,3 +490,9 @@ drag_left_margin = 0.1
 drag_top_margin = 0.7
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=281545573]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.2
+one_shot = true

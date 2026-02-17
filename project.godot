@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Silksong Movement Tutorial"
+run/main_scene="uid://da84ajuoi0pue"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
