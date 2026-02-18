@@ -16,9 +16,12 @@ const WALK_VELOCITY := 200.0
 const JUMP_VELOCITY := -600.0
 const JUMP_DECELERATION := 1500.0
 const DOUBLE_JUMP_VELOCITY := -450.0
+const FLOAT_GRAVITY := 200.0
+const FLOAT_VELOCITY := 100.0
 
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var coyote_timer: Timer = %CoyoteTimer
+@onready var float_cooldown: Timer = %FloatCooldown
 
 var active_state := STATE.FALL
 var can_double_jump := false
@@ -55,6 +58,13 @@ func switch_state(to_state: STATE) -> void:
 			animated_sprite.play("double_jump")
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			can_double_jump = false
+			
+		STATE.FLOAT:
+			if float_cooldown.time_left > 0:
+				active_state = previous_state
+				return
+			animated_sprite.play("float")
+			velocity.y = 0
 
 func process_state(delta: float) -> void:
 	match active_state:
@@ -69,6 +79,8 @@ func process_state(delta: float) -> void:
 					switch_state(STATE.JUMP)
 				elif can_double_jump:
 					switch_state(STATE.DOUBLE_JUMP)
+				else:
+					switch_state(STATE.FLOAT)
 		
 		STATE.FLOOR:
 			if Input.get_axis("move_left", "move_right"):
@@ -88,6 +100,16 @@ func process_state(delta: float) -> void:
 			
 			if Input.is_action_just_released("jump") or velocity.y >= 0:
 				velocity.y = 0
+				switch_state(STATE.FALL)
+				
+		STATE.FLOAT:
+			velocity.y = move_toward(velocity.y, FLOAT_VELOCITY, FLOAT_GRAVITY * delta)
+			handle_movement()
+			
+			if is_on_floor():
+				switch_state(STATE.FLOOR)
+			elif Input.is_action_just_released("jump"):
+				float_cooldown.start()
 				switch_state(STATE.FALL)
 				
 func handle_movement() -> void:
