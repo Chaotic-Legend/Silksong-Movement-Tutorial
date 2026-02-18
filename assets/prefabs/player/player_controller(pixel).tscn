@@ -465,6 +465,7 @@ safe_margin = 0.2
 script = ExtResource("1_70ait")
 
 [node name="PlayerCollider" type="CollisionShape2D" parent="." unique_id=87555347]
+unique_name_in_owner = true
 shape = SubResource("CapsuleShape2D_2q3ad")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=2025332202]
@@ -502,3 +503,13 @@ unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.1
 one_shot = true
+
+[node name="LedgeClimbRayCast" type="RayCast2D" parent="." unique_id=953241319]
+unique_name_in_owner = true
+position = Vector2(3, -26)
+target_position = Vector2(10, 23)
+
+[node name="LedgeSpaceRayCast" type="RayCast2D" parent="." unique_id=1284576932]
+unique_name_in_owner = true
+position = Vector2(-26, 24)
+target_position = Vector2(0, -49)
