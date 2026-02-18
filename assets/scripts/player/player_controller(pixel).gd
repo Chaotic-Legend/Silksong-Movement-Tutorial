@@ -15,11 +15,13 @@ const FALL_VELOCITY := 500.0
 const WALK_VELOCITY := 200.0
 const JUMP_VELOCITY := -600.0
 const JUMP_DECELERATION := 1500.0
+const DOUBLE_JUMP_VELOCITY := -450.0
 
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var coyote_timer: Timer = %CoyoteTimer
 
 var active_state := STATE.FALL
+var can_double_jump := false
 
 func _ready() -> void:
 	switch_state(active_state)
@@ -32,17 +34,27 @@ func switch_state(to_state: STATE) -> void:
 	var previous_state := active_state
 	active_state = to_state
 	
-	# State specific things that need to run only once upon entering the next state.
+	## State specific things that need to run only once upon entering the next state.
 	match active_state:
 		STATE.FALL:
+			if previous_state != STATE.DOUBLE_JUMP:
+				animated_sprite.play("fall")
 			animated_sprite.play("fall")
 			if previous_state == STATE.FLOOR:
 				coyote_timer.start()
+				
+		STATE.FLOOR:
+			can_double_jump = true
 		
 		STATE.JUMP:
 			animated_sprite.play("jump")
 			velocity.y = JUMP_VELOCITY
 			coyote_timer.stop()
+			
+		STATE.DOUBLE_JUMP:
+			animated_sprite.play("double_jump")
+			velocity.y = DOUBLE_JUMP_VELOCITY
+			can_double_jump = false
 
 func process_state(delta: float) -> void:
 	match active_state:
@@ -52,8 +64,11 @@ func process_state(delta: float) -> void:
 			
 			if is_on_floor():
 				switch_state(STATE.FLOOR)
-			elif Input.is_action_just_pressed("jump") and coyote_timer.time_left > 0:
-				switch_state(STATE.JUMP)
+			elif Input.is_action_just_pressed("jump"):
+				if coyote_timer.time_left > 0:
+					switch_state(STATE.JUMP)
+				elif can_double_jump:
+					switch_state(STATE.DOUBLE_JUMP)
 		
 		STATE.FLOOR:
 			if Input.get_axis("move_left", "move_right"):
@@ -67,11 +82,12 @@ func process_state(delta: float) -> void:
 			elif Input.is_action_just_pressed("jump"):
 				switch_state(STATE.JUMP)
 		
-		STATE.JUMP:
+		STATE.JUMP, STATE.DOUBLE_JUMP:
 			velocity.y = move_toward(velocity.y, 0, JUMP_DECELERATION * delta)
 			handle_movement()
 			
 			if Input.is_action_just_released("jump") or velocity.y >= 0:
+				velocity.y = 0
 				switch_state(STATE.FALL)
 				
 func handle_movement() -> void:
