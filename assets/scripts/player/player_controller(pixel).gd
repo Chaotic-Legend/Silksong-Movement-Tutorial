@@ -18,6 +18,7 @@ const JUMP_DECELERATION := 1500.0
 const DOUBLE_JUMP_VELOCITY := -450.0
 const FLOAT_GRAVITY := 200.0
 const FLOAT_VELOCITY := 100.0
+const LEDGE_JUMP_VELOCITY := -500.0
 
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var coyote_timer: Timer = %CoyoteTimer
@@ -76,6 +77,10 @@ func switch_state(to_state: STATE) -> void:
 			velocity = Vector2.ZERO
 			global_position.y = ledge_climb_ray_cast.get_collision_point().y
 			can_double_jump = true
+			
+		STATE.LEDGE_JUMP:
+			animated_sprite.play("double_jump")
+			velocity.y = LEDGE_JUMP_VELOCITY
 
 func process_state(delta: float) -> void:
 	match active_state:
@@ -107,7 +112,7 @@ func process_state(delta: float) -> void:
 			elif Input.is_action_just_pressed("jump"):
 				switch_state(STATE.JUMP)
 		
-		STATE.JUMP, STATE.DOUBLE_JUMP:
+		STATE.JUMP, STATE.DOUBLE_JUMP, STATE.LEDGE_JUMP:
 			velocity.y = move_toward(velocity.y, 0, JUMP_DECELERATION * delta)
 			handle_movement()
 			
@@ -134,6 +139,12 @@ func process_state(delta: float) -> void:
 				offset.x *= facing_direction
 				position += offset
 				switch_state(STATE.FLOOR)
+			elif Input.is_action_just_pressed("jump"):
+				var progress := inverse_lerp(0, animated_sprite.sprite_frames.get_frame_count("ledge_climb"), animated_sprite.frame)
+				var offset := ledge_climb_offset()
+				offset.x *= facing_direction * progress
+				position += offset
+				switch_state(STATE.LEDGE_JUMP)
 				
 func handle_movement() -> void:
 	var input_direction := signf(Input.get_axis("move_left", "move_right"))
@@ -157,8 +168,11 @@ func is_space() -> bool:
 	ledge_space_ray_cast.global_position = ledge_climb_ray_cast.get_collision_point()
 	ledge_space_ray_cast.force_raycast_update()
 	return not ledge_space_ray_cast.is_colliding()
+
 func ledge_climb_offset() -> Vector2:
 	var shape := player_collider.shape
 	if shape is CapsuleShape2D:
 		return Vector2(shape.radius * 2.0, -shape.height * 0.5)
+	if shape is RectangleShape2D:
+		return Vector2(shape.size.x, -shape.size.y * 0.5)
 	return Vector2.ZERO
