@@ -238,4 +238,4 @@ In the Godot Engine, create a playable 2D game with a resolution of 1152 × 648 
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 <br>
-Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Working on the rubric items, final prompt, and screenshots for my third Godot task by following another YouTube video tutorial by [IcyEngine](https://www.youtube.com/watch?v=lNePLabodBk).
+Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Completed.
