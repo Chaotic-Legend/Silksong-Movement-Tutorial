@@ -3,6 +3,8 @@
 # Silksong Movement Tutorial #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 1](https://www.youtube.com/watch?v=lNePLabodBk) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
 
+This tutorial video was designed as a beginner follow-along project that guides viewers through building a 2D player controller inspired by the platformer movement of Hornet from Hollow Knight: Silksong, demonstrating how movement states, collision behavior, input setup, and a robust GDScript code are structured and implemented in the Godot Engine to create a flexible and expandable 2D platforming game. It also served as the foundation for completing a structured implementation task on Feather, with the project integrated into the wider development workflow supporting the Handshake AI Project Moonstone initiative.
+
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
