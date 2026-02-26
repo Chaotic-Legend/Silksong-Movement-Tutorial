@@ -162,75 +162,71 @@ In the Godot Engine, create a playable 2D game with a resolution of 1152 × 648 
 - Run the main scene, walk off any platform, then quickly press the Space key to perform a jump right after leaving the ledge.
 - The prompt requires that the player character have a coyote timer to allow players to fairly jump right after walking off any ledge.
 
-20. Another Timer node is present to set a cooldown time for floating.
-- Open the player controller scene and confirm that it uses a timer child node named "FloatCooldown" to control the cooldown to float.
-- The prompt requires that the player controller scene have a float cooldown timer to control when the player is allowed to float again.
-
-21. The player character can repeatedly pause and float while airborne.
+20. The player character can repeatedly pause and float while airborne.
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
-- The prompt requires that the player character can pause and float multiple times while airborne to enable precise midair control.
+- The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
 
-22. A RayCast node is present to detect collision objects for ledge climbs.
+21. A RayCast node is present to detect collision objects for ledge climbs.
 - Open the player controller scene and confirm that it uses a ray cast child node named "LedgeClimbRayCast" to execute ledge climbs.
 - The prompt requires that the player controller scene have a ray cast to detect any ledge for the player to automatically ledge climb.
 
-23. The first RayCast node has a Target Position set to 10.0 px by 23.0 px.
+22. The first RayCast node has a Target Position set to 10.0 px by 23.0 px.
 - Open the player controller scene and click on "LedgeClimbRayCast" to confirm that the Target Position value is set to 10.0 px by 23.0 px.
 - The prompt requires that the "LedgeClimbRayCast" node have a Target Position value of 10.0 px by 23.0 px to detect ledges.
 
-24. The first RayCast node has a Position value set to 3.0 px by -26.0 px.
+23. The first RayCast node has a Position value set to 3.0 px by -26.0 px.
 - Open the player controller scene and click on "LedgeClimbRayCast" to confirm that the Position value is set to 3.0 px by -26.0 px.
 - The prompt requires that the "LedgeClimbRayCast" node have a Position value of 3.0 px by -26.0 px to detect the ledge position.
 
-25. Another RayCast node is present to detect collisions for ledge jumps.
+24. Another RayCast node is present to detect collisions for ledge jumps.
 - Open the player controller scene and confirm that it uses a ray cast child node named "LedgeSpaceRayCast" to execute ledge jumps.
 - The prompt requires that the player controller scene have a ray cast to detect open space for the player to jump when ledge climbing.
 
-26. The second RayCast node has a Target Position of 0.0 px by -49.0 px.
+25. The second RayCast node has a Target Position of 0.0 px by -49.0 px.
 - Open the player controller scene to click on "LedgeSpaceRayCast" and confirm that the Target Position is set to 0.0 px by -49.0 px.
 - The prompt requires that the "LedgeSpaceRayCast" node have a Target Position value of 0.0 px by -49.0 px to detect ledges.
 
-27. The second RayCast node has a Position value of -26.0 px by 24.0 px.
+26. The second RayCast node has a Position value of -26.0 px by 24.0 px.
 - Open the player controller scene to click on "LedgeSpaceRayCast" and confirm that the Position value is set to -26.0 px by 24.0 px.
 - The prompt requires that the "LedgeSpaceRayCast" node have a Position value of -26.0 px by 24.0 px to detect the ledge position.
 
-28. The player character correctly transitions between movement states.
+27. The player character correctly transitions between movement states.
 - Inspect the player GDScript code to confirm that there is an enum named STATE defining the distinct movement states: FALL, FLOOR, JUMP, DOUBLE_JUMP, FLOAT, LEDGE_CLIMB, and LEDGE_JUMP.
 - The prompt requires a functional state machine implemented in code that controls all movement states of the player character.
 
-29. A "FALL_GRAVITY" constant controls the player's gravity while falling.
+28. A "FALL_GRAVITY" constant controls the player's gravity while falling.
 - Inspect the GDScript code for an unchangeable constant named "FALL_GRAVITY" affecting the falling gravity of the player character.
 - The prompt requires the GDScript code to define falling gravity as an unchangeable constant, but configurable for movement balance.
 
-30. A "FALL_VELOCITY" constant controls the player's falling speed.
+29. A "FALL_VELOCITY" constant controls the player's falling speed.
 - Inspect the GDScript code for an unchangeable constant named "FALL_VELOCITY" affecting the fall speed of the player character.
 - The prompt requires the GDScript code to define falling velocity as an unchangeable constant, but configurable for movement balance.
 
-31. A "WALK_VELOCITY" constant controls the player's walking speed.
+30. A "WALK_VELOCITY" constant controls the player's walking speed.
 - Inspect the GDScript code for an unchangeable constant named "WALK_VELOCITY" affecting the walk speed of the player character.
 - The prompt requires the GDScript code to define walk velocity as an unchangeable constant, but configurable for movement balance.
 
-32. A "JUMP_VELOCITY" constant controls the player's initial jump force.
+31. A "JUMP_VELOCITY" constant controls the player's initial jump force.
 - Inspect the GDScript code for an unchangeable constant named "JUMP_VELOCITY" affecting the jump speed of the player character.
 - The prompt requires the GDScript code to define jump velocity as an unchangeable constant, but configurable for movement balance.
 
-33. A "JUMP_DECELERATION" constant controls the jump slowdown rate.
+32. A "JUMP_DECELERATION" constant controls the jump slowdown rate.
 - Inspect the GDScript code for an unchangeable constant named "JUMP_DECELERATION" affecting the jump slowdown of the player.
 - The prompt requires the GDScript code to define jump deceleration as an unchangeable constant, but configurable for jumping control.
 
-34. A "DOUBLE_JUMP_VELOCITY" constant controls double jump force.
+33. A "DOUBLE_JUMP_VELOCITY" constant controls double jump force.
 - Inspect the GDScript code for an unchangeable constant named "DOUBLE_JUMP_VELOCITY" affecting the double jump speed.
 - The prompt requires the GDScript code to define the double jump velocity as an unchangeable constant, but configurable for jumping.
 
-35. A "FLOAT_GRAVITY" constant controls the player's floating gravity.
+34. A "FLOAT_GRAVITY" constant controls the player's floating gravity.
 - Inspect the GDScript code for an unchangeable constant named "FLOAT_GRAVITY" affecting the float gravity of the player character.
 - The prompt requires the GDScript code to define the float gravity as an unchangeable constant, but configurable for movement balance.
 
-36. A "FLOAT_VELOCITY" constant controls vertical speed while floating.
+35. A "FLOAT_VELOCITY" constant controls vertical speed while floating.
 - Inspect the GDScript code for an unchangeable constant named "FLOAT_VELOCITY" affecting the floating speed of the player.
 - The prompt requires the GDScript code to define float velocity as an unchangeable constant, but configurable for movement balance.
 
-37. A "LEDGE_JUMP_VELOCITY" constant controls the ledge jump force.
+36. A "LEDGE_JUMP_VELOCITY" constant controls the ledge jump force.
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 <br>
