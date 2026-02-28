@@ -171,8 +171,8 @@ The floating mechanic grants the player character the ability to pause and hover
 - The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
 
 21. The player character correctly transitions between movement states.
-- Inspect the player GDScript code to confirm that there is an enum named STATE defining the distinct movement states: FALL, FLOOR, JUMP, DOUBLE_JUMP, FLOAT, LEDGE_CLIMB, and LEDGE_JUMP.
-- The prompt requires a functional state machine implemented in code that controls all movement states of the player character.
+- Run the main scene and observe the player character as it falls, walks, jumps, double jumps, floats, ledge climbs, and ledge jumps.
+- The prompt requires a functioning state machine that manages the player character's movement between all movement states.
 
 22. A "FALL_GRAVITY" constant controls the player's gravity while falling.
 - Inspect the GDScript code for an unchangeable constant named "FALL_GRAVITY" affecting the falling gravity of the player character.
