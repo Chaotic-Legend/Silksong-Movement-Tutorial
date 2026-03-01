@@ -30,7 +30,7 @@ In this segment, the video tutorial demonstrates a systematic process for progra
 
 <ins> Briefly describe the inputs to / input state of this project. </ins>
 <br>
-The input state consists of a newly created Godot Engine project using the template files from the Tutorial Ready Template pack created by IcyEngine on itch.io. This project includes a preconfigured assets folder containing a functional test level, a structured node hierarchy, a starter player controller, and an original blue stick figure sprite asset. This template controller utilizes a CharacterBody2D root node, a CollisionShape2D node configured with a capsule shape for the sprite, a Camera2D node that follows the player character during movement, and an AnimatedSprite2D node containing multiple animation frames. https://icyengine.itch.io/silksong-movement-tutorial
+The input state consists of a newly created Godot Engine project initialized using the template files from the Tutorial Ready Template pack created by IcyEngine on itch.io. The project begins by extracting and using the assets folder included inside the tutorial_ready_template.zip, which provides the foundational resources and structure required to start the implementation. This project includes a preconfigured assets folder containing a functional test level, a structured node hierarchy, a starter player controller, and an original blue stick figure sprite asset. This template controller utilizes a CharacterBody2D root node, a CollisionShape2D node configured with a capsule shape for the sprite, a Camera2D node that follows the player character during movement, and an AnimatedSprite2D node containing multiple animation frames. https://icyengine.itch.io/silksong-movement-tutorial
 
 <ins> **Step 2: Task completion** </ins>
 <br>
@@ -218,4 +218,4 @@ The player controller incorporates ledge detection to identify climbable surface
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 <br>
-Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Finalizing the last corrections for the first review of my third "Create a Godot" task.
+Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Fixing done.
