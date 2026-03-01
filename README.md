@@ -82,11 +82,11 @@ Silksong Movement Tutorial Files from the Tutorial Ready Template by [IcyEngine]
 
 <ins> Final Prompt </ins>
 <br>
-In the Godot Engine, create a playable 2D game with a resolution of 1152 × 648 pixels, featuring a controllable player character using a pixel-art sprite asset. The scene should have a solid background color of #4d4d4d, and the player sprite should display sharply with preserved pixel detail using the "Nearest" texture filter. The player character is a blue sticker figure that can walk, jump, double jump, fall, float, climb ledges, and perform ledge jumps. All movement behaviors use constants defined in the GDScript code that are unchangeable at runtime, but can be adjusted in the code to fine-tune gameplay balance. These distinct constants include "FALL_GRAVITY" to control the gravity while falling, "FALL_VELOCITY" to control the falling speed, "WALK_VELOCITY" to control the walking speed, "JUMP_VELOCITY" to control the initial jump force, "JUMP_DECELERATION" to control the jump speed slowdown, "DOUBLE_JUMP_VELOCITY" to control the double jump speed, "FLOAT_GRAVITY" to control the gravity while slowly floating down, "FLOAT_VELOCITY" to control the vertical floating speed, and "LEDGE_JUMP_VELOCITY" to control the ledge jump speed.
+In the Godot Engine, create a playable 2D game with a resolution of 1152 × 648 pixels, featuring a controllable player character using a pixel-art sprite asset. The scene should have a solid background color of #4d4d4d, and the player sprite should display sharply with preserved pixel detail using the "Nearest" texture filter. The player character is a blue sticker figure that can walk, jump, double jump, fall, float, climb ledges, and perform ledge jumps. All movement behaviors use constants defined in the script that are unchangeable at runtime, but can be adjusted in the code to fine-tune gameplay balance. These distinct constants include "FALL_GRAVITY" to control the gravity while falling, "FALL_VELOCITY" to control the falling speed, "WALK_VELOCITY" to control the walking speed, "JUMP_VELOCITY" to control the initial jump force, "JUMP_DECELERATION" to control the jump speed slowdown, "DOUBLE_JUMP_VELOCITY" to control the double jump speed, "FLOAT_GRAVITY" to control the gravity while slowly floating down, "FLOAT_VELOCITY" to control the vertical floating speed, and "LEDGE_JUMP_VELOCITY" to control the ledge jump speed.
 
-The physics is configured with a gravity value of 980 pixels per second squared, ensuring that the player character responds naturally to falls and jumps in the game environment. The Input Map defines custom input actions to control the player character, with "move_left" bound to the A key for leftward movement, "move_right" bound to the D key for rightward movement, "jump" bound to the Space key for jumping, and "sprint" bound to the Shift key for sprinting. Player movement responds to input as follows: the A key moves the player left, the D key moves the player right, pressing the Space key once performs a normal single jump, pressing it twice performs a double jump, and pressing it a third time, holding the key, causes the player to float and descend slowly. Pressing and holding the Space key causes the player character to jump higher, and releasing all input keys immediately stops player movement during gameplay. The movement functionally allows the player character to jump briefly after walking off a ledge, commonly known as coyote time, and applies a cooldown to regulate how frequently the player can float.
+The physics is configured with a gravity value of 980 pixels per second squared, ensuring that the player character responds naturally to falls and jumps in the game environment. The Input Map defines custom input actions to control the player character, with "move_left" bound to the A key for leftward movement, "move_right" bound to the D key for rightward movement, "jump" bound to the Space key for jumping, and "sprint" bound to the Shift key for sprinting. Player movement responds to input as follows: the A key moves the player left, the D key moves the player right, pressing the Space key once performs a normal single jump, pressing it twice performs a double jump, and pressing it a third time, holding the key, causes the player to float and descend slowly. Pressing and holding the Space key causes the player character to jump higher, and releasing all input keys immediately stops player movement during gameplay. The movement functionally allows the player character to jump briefly after walking off a ledge, commonly known as coyote time, and applies a cooldown to regulate how frequently the player can float. The floating mechanic grants the player character the ability to pause and hover while airborne, and to repeat this action for precise midair control and maneuverability. 
 
-The floating mechanic grants the player character the ability to pause and hover while airborne, and to repeat this action for precise midair control and maneuverability. The player controller incorporates ledge detection to identify climbable surfaces and confirm that adequate open space exists above or behind the player character to allow safe movement. If the required gameplay conditions have been satisfied, the character can automatically climb over the ledge or quickly press the Space key during the ledge climb to perform a ledge jump without colliding with surrounding geometry. The specific method used to detect ledges is flexible, but the climbing and ledge jumping behavior must function correctly with the state machine and be clearly observable during gameplay. A state machine implemented in the script controls and regulates transitions between various movement states, including falling, walking, jumping, double jumping, floating, ledge climbing, and ledge jumping. Each movement state responds correctly to the defined constants, timers, raycasts, and input actions, ensuring consistent behavior while allowing the gameplay to be easily tuned and adjusted.
+The player controller incorporates ledge detection to identify climbable surfaces and confirm that adequate open space exists above or behind the player character to allow safe movement. If the required gameplay conditions have been satisfied, the character can automatically climb over the ledge or quickly press the Space key during the ledge climb to perform a ledge jump without colliding with surrounding geometry. The specific method used to detect ledges is flexible, but the climbing and ledge jumping behavior must function correctly with the state machine and be clearly observable during gameplay. The player character must properly include configured body collision that allows consistent interaction with the level environment, ensuring the character remains supported by platforms, stops against walls, and does not pass through or fall through solid terrain during gameplay. A state machine implemented in the script controls and regulates transitions between various movement states, including falling, walking, jumping, double jumping, floating, ledge climbing, and ledge jumping. Each movement state responds correctly to the defined constants, timers, raycasts, and input actions, ensuring consistent behavior while allowing the gameplay to be easily tuned and adjusted.
 
 <ins> Rubric Items </ins>
 <br>
@@ -170,44 +170,52 @@ The floating mechanic grants the player character the ability to pause and hover
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
 - The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
 
-21. The player character correctly transitions between movement states.
+21. The player character properly collides with the level environment.
+- Run the main scene and move the player across platforms and into walls, confirming the character does not pass through solid terrain.
+- The prompt requires that the player character have a functional body collision to interact correctly with the level environment.
+
+22. 
+- 
+- 
+
+23. The player character correctly transitions between movement states.
 - Run the main scene and observe the player character as it falls, walks, jumps, double jumps, floats, ledge climbs, and ledge jumps.
 - The prompt requires a functioning state machine that manages the player character's movement between all movement states.
 
-22. A "FALL_GRAVITY" constant controls the player's gravity while falling.
+24. A "FALL_GRAVITY" constant controls the player's gravity while falling.
 - Inspect the GDScript code for an unchangeable constant named "FALL_GRAVITY" affecting the falling gravity of the player character.
 - The prompt requires the GDScript code to define falling gravity as an unchangeable constant, but configurable for movement balance.
 
-23. A "FALL_VELOCITY" constant controls the player's falling speed.
+25. A "FALL_VELOCITY" constant controls the player's falling speed.
 - Inspect the GDScript code for an unchangeable constant named "FALL_VELOCITY" affecting the fall speed of the player character.
 - The prompt requires the GDScript code to define falling velocity as an unchangeable constant, but configurable for movement balance.
 
-24. A "WALK_VELOCITY" constant controls the player's walking speed.
+26. A "WALK_VELOCITY" constant controls the player's walking speed.
 - Inspect the GDScript code for an unchangeable constant named "WALK_VELOCITY" affecting the walk speed of the player character.
 - The prompt requires the GDScript code to define walk velocity as an unchangeable constant, but configurable for movement balance.
 
-25. A "JUMP_VELOCITY" constant controls the player's initial jump force.
+27. A "JUMP_VELOCITY" constant controls the player's initial jump force.
 - Inspect the GDScript code for an unchangeable constant named "JUMP_VELOCITY" affecting the jump speed of the player character.
 - The prompt requires the GDScript code to define jump velocity as an unchangeable constant, but configurable for movement balance.
 
-26. A "JUMP_DECELERATION" constant controls the jump slowdown rate.
+28. A "JUMP_DECELERATION" constant controls the jump slowdown rate.
 - Inspect the GDScript code for an unchangeable constant named "JUMP_DECELERATION" affecting the jump slowdown of the player.
 - The prompt requires the GDScript code to define jump deceleration as an unchangeable constant, but configurable for jumping control.
 
-27. A "DOUBLE_JUMP_VELOCITY" constant controls double jump force.
+29. A "DOUBLE_JUMP_VELOCITY" constant controls double jump force.
 - Inspect the GDScript code for an unchangeable constant named "DOUBLE_JUMP_VELOCITY" affecting the double jump speed.
 - The prompt requires the GDScript code to define the double jump velocity as an unchangeable constant, but configurable for jumping.
 
-28. A "FLOAT_GRAVITY" constant controls the player's floating gravity.
+30. A "FLOAT_GRAVITY" constant controls the player's floating gravity.
 - Inspect the GDScript code for an unchangeable constant named "FLOAT_GRAVITY" affecting the float gravity of the player character.
 - The prompt requires the GDScript code to define the float gravity as an unchangeable constant, but configurable for movement balance.
 
-29. A "FLOAT_VELOCITY" constant controls vertical speed while floating.
+31. A "FLOAT_VELOCITY" constant controls vertical speed while floating.
 - Inspect the GDScript code for an unchangeable constant named "FLOAT_VELOCITY" affecting the floating speed of the player.
 - The prompt requires the GDScript code to define float velocity as an unchangeable constant, but configurable for movement balance.
 
-30. A "LEDGE_JUMP_VELOCITY" constant controls the ledge jump force.
+32. A "LEDGE_JUMP_VELOCITY" constant controls the ledge jump force.
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 <br>
-Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Fixing the corrections from the first review of my third Create a Godot task.
+Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Finalizing the last corrections for the first review of my third "Create a Godot" task.
