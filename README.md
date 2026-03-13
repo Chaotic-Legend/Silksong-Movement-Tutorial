@@ -221,6 +221,8 @@ The player controller incorporates ledge detection to identify climbable surface
 # Silksong Movement Tutorial - Part 2 #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 2](https://www.youtube.com/watch?v=yv9J5N4FeDY) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
 
+This tutorial guides viewers through building an advanced 2D player controller in the Godot Engine, inspired by the platforming movement of Hornet from Hollow Knight: Silksong. As a follow-up project, this video demonstrates how to implement complex mechanics, including wall sliding, wall jumping, wall climbing, dashing, and sprinting. It covers structuring movement states, handling collision and timer behavior with different nodes, setting up input actions, and writing robust GDScript code to create a flexible, expandable, and responsive platforming experience. It also served as the foundation for a structured implementation task on Feather, with the project integrated into the wider development workflow that supports the Handshake AI Project Touchstone initiative.
+
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
