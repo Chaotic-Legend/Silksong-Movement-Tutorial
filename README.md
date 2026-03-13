@@ -217,5 +217,3 @@ The player controller incorporates ledge detection to identify climbable surface
 32. A "LEDGE_JUMP_VELOCITY" constant controls the ledge jump force.
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
-<br>
-Godot - https://feather.openai.com/tasks/fa76dc0f-dfc9-47fd-8763-c71a335f2b59 - Fixing done.
