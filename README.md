@@ -227,3 +227,161 @@ The player controller incorporates ledge detection to identify climbable surface
 ![Sprite Asset](assets/art/2d/player/stick_figure/sf_idle_pixel.png)
 
 # Create a Godot task #
+### **Task prompt** ###
+First, enter the **task prompt** and any relevant reference files (e.g., docs, diagrams, sketches, photos, schematics).
+
+Tasks should sound like what a manager might give a skilled but junior employee: high-level guidance with some leeway on executional details, but with very clear success metrics. What a good outcome looks like must be very clear and easy to understand.
+
+Include any relevant **reference files** (docs, diagrams, sketches, photos, schematics, etc.) needed for someone to do this task.
+
+Reminder on the difference between reference and starting state files:
+- **Reference files**: anything the Employee should look at or read while completing the project that does not need to be directly loaded into the application (*'please make something that looks like XYZ image'*)
+- **Starting state files (upload below)**: anything that the Employee would need to load into their workspace to complete the task (*'here is the existing file you should adapt'*)
+
+<ins> Task prompt (ask the Employee) </ins>
+<br>
+We are continuing development of the movement system for our 2D pixel-art platformer prototype using the Godot Engine. The current build includes a functional player controller and a foundational state machine from an earlier stage, which manages the character's core movement logic and primary gameplay interactions. Your task is to extend and refine the existing system by implementing advanced traversal mechanics inspired by Hornet's movement style from Hollow Knight: Silksong. The updated system should support responsive platformer gameplay by properly configuring the physics behavior and control inputs, while also maintaining the visual clarity expected in a pixel-art platformer experience. Begin by reviewing the existing project structure and adjusting the environment settings as needed to ensure the game displays consistently for a pixel-art platformer. The scene background should use a dark gray tone appropriate for a simple testing environment, and the project should use design settings that preserve the crisp visual appearance of pixel-art assets. The player character should be controllable with standard keyboard inputs: A to move left, D to move right, Space to jump, and Shift to sprint. Once the settings controls are confirmed to be working, extend the movement controller to support a set of advanced platforming mechanics that allow the player character to interact dynamically with the level environment. The updated movement system should include the following movement abilities:
+
+- Wall sliding while gripping against any flat vertical wall surface.
+- Wall jumping that propels the player character away from the wall.
+- Wall climbing enables the player character to scale vertical walls.
+- A directional dash movement for short bursts of horizontal speed.
+- Running at a sprinting speed allows for faster horizontal movement.
+- Directional turning behavior that transitions smoothly while moving.
+- A refined float state that allows the character to descend smoothly.
+
+Extend the player controller script using GDScript to program the updated movement system and its associated abilities, while preserving responsive core platforming behavior. The character should stop moving when movement input is released, retain the ability to jump briefly after stepping off a platform, and be able to activate floating multiple times while airborne according to the intended cooldown behavior. The player controller must properly interact with the level environment by colliding with platforms and walls so the character cannot pass through solid terrain. The character should also remain visible in the camera view during gameplay to consistently frame the player on-screen. All movement mechanics should integrate cleanly within the existing state machine architecture. The character should transition smoothly between movement states such as walking, jumping, falling, floating, and wall interactions, with behavior that feels responsive and consistent during gameplay. When completed, the player character should be able to navigate the provided platforming test environment while demonstrating all advanced movement mechanics working together smoothly. The implementation must maintain a modular design to allow the addition of new abilities and gameplay features in future development without requiring major architectural changes.
+
+<ins> Which of the following best fits this task? </ins>
+<br>
+Additional work on an existing very large project
+
+<ins> How long would you anticipate this task taking an 'Employee' to complete? (in hours) </ins>
+<br>
+1
+
+### **Starting state** ###
+Please describe and include below any information about the starting state of this project:
+- Existing work to be modified
+- Other assets or other inputs the Employee needs to bring to be able to complete this task
+
+Reminder on the difference between the starting state and the reference files:
+- **Starting state files**: anything that the Employee would need to load into their workspace to complete the task ('*here is the existing file you should adapt*')
+- **Reference files (upload above)**: anything the Employee should look at or read while completing the project that does not need to be directly loaded into the application ('*please make something that looks like XYZ image*')
+
+<ins> Starting state description </ins>
+<br>
+The starting state for this task is an existing Godot Engine project that serves as a foundational framework, containing preconfigured assets, a functional test level, and a script system that supports basic player movement and interactions, providing a structured environment for implementing more advanced gameplay mechanics. The current build includes a basic player controller and an initial state machine from the previous phase that manages essential character movement and interactions. This project features a basic platformer test environment for evaluating movement mechanics and interactions, along with an original stick-figure sprite representing the player character, providing a simple visual reference for implementing and testing character animations and advanced gameplay features. These template files and the state machine system provide the foundation for implementing the advanced movement mechanics outlined in the task prompt, which requires a solid understanding of GDScript programming and the integration of new nodes into the script to create a functional game. This project also features a dedicated player controller script that manages the character's movement logic and state machine transitions, which needs expansion with new and updated code to implement advanced movement features that fulfill the task requirements. The assets folder also contains all animation frames for each movement action, showcasing advanced movements and enabling their implementation in the script.
+
+### **Overall context** ###
+Finally, include context on this task and why it is realistic and representative of real-life work:
+- Why is this a reasonable task for a manager to ask a junior-level employee to do?
+- Is there a larger project it might be a part of?
+
+<ins> Task context </ins>
+<br>
+This task is representative of work commonly assigned to a junior-level developer in a game development environment. A manager may ask a junior developer to implement or extend gameplay mechanics by following technical documentation, tutorials, or internal development guides. In this case, the task involves continuing the implementation of an existing player movement system by adding advanced mechanics while maintaining compatibility with the current project structure. Completing work like this helps ensure that the developer can understand existing systems, follow structured implementation steps, and integrate new features into a working codebase. This assignment simulates the incremental development of a 2D platformer, reflecting how movement systems are expanded and refined in a professional studio environment. Movement systems are often built in stages, beginning with core mechanics such as walking and jumping, and later expanding to include advanced actions like wall interactions, dashing, and sprinting. By implementing these mechanics within an organized state machine, the developer contributes to a scalable character controller that can support additional abilities and gameplay features later in development.
+
+<ins> Rubric Items </ins>
+<br>
+1. The project's viewport width value is 1152. 
+- Confirm that the Viewport Width value is equal to 1152 by navigating to "Project Settings," then "Display," and then "Window."
+- The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
+
+2. The project's viewpoint height value is 648.
+- Confirm that the Viewport Height value is equal to 648 by navigating to "Project Settings," then "Display," and then "Window."
+- The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
+
+3. The scene's background color is filled with the color #4d4d4d.
+- Verify that the Default Clear Color hex value is #4d4d4d by clicking on "Project Settings," then "Rendering," and then "Environment."
+- The prompt requires the scene background to use a dark gray color appropriate to the environment.
+
+4. The project's physics gravity value is 980 pixels/s^2.
+- Confirm that the Default Gravity value is equal to 980.0 px/s^2 by clicking on "Project Settings," then "Physics," and then "2D."
+- The prompt requires that the project environment use a physics gravity of exactly 980.0 pixels per second squared.
+
+5. The project's default texture filter is assigned to nearest.
+- Confirm that the Default Texture Filter is assigned to "Nearest" by clicking on "Project Settings," then "Rendering," and then "Textures."
+- The prompt requires that the sprite asset display a clearly visible pixel-art texture with crisp edges and preserved detail.
+
+6. The Input Map includes a "move_left" action bound to the A key.
+- Confirm an input action exists with the A key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
+- The prompt requires that pressing the A key should cause the player character to move left.
+
+7. The Input Map includes a "move_right" action bound to the D key.
+- Confirm an input action exists with the D key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
+- The prompt requires that pressing the D key should cause the player character to move right.
+
+8. The Input Map includes a "jump" action bound to the Space key.
+- Confirm an input action exists with the Space key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
+- The prompt requires that the Space key be assigned as a keyboard input action to make the player character jump.
+
+9. The Input Map includes a "sprint" action bound to the Shift key.
+- Confirm an input action exists with the Shift key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
+- The prompt requires that the Shift key be assigned as a keyboard input action to make the player character sprint.
+
+10. Pressing the A key moves the player character to the left.
+- Run the main scene and press the A key to observe the sprite asset perform leftward movement.
+- Pressing the A key should cause the sprite asset to move left, as required by the prompt.
+
+11. Pressing the D key moves the player character to the right.
+- Run the main scene and press the D key to observe the sprite asset perform rightward movement.
+- Pressing the D key should cause the sprite asset to move right, as required by the prompt.
+
+12. Pressing the Space key makes the player character jump up.
+- Run the main scene and press the Space key to observe the sprite asset jump upward.
+- Pressing the Space key should cause the sprite asset to jump up, as required by the prompt.
+
+13. Pressing the Space key twice makes the player character double jump.
+- Run the main scene and press the Space key twice to observe the sprite asset jump twice.
+- Pressing the Space key twice should cause the sprite asset to double jump, as required by the mechanic in the prompt.
+
+14. Pressing the Space key thrice makes the player character float down.
+- Run the main scene and press the jump key three times, holding it down on the third press to make the player character float down.
+- Pressing the Space key three times, holding it on the third press, should cause the player to float down, as required by the prompt.
+
+15. Holding the Space key makes the player jump higher than tapping it.
+- Run the main scene, quickly tap the Space key for a normal jump, and then press and hold the Space key for a high jump.
+- Pressing and holding down the Space key should cause the sprite asset to jump up higher, as required by the mechanic in the prompt.
+
+16. The player character can climb over any ledge when in close contact.
+- Run the main scene, move close to any ledge in the level, and observe the player character automatically perform a ledge climb.
+- The player character should automatically climb over any ledge when the game detects it as climbable, as required by the prompt.
+
+17. Pressing the Space key during the ledge climb executes a ledge jump.
+- Run the main scene, quickly press the Space key during a ledge climb, and observe the player character perform a ledge jump.
+- The player character should jump over any ledge when pressing the Space key during the ledge climb, as required by the prompt.
+
+18. The player character stops moving when any input key is released.
+- Run the main scene, press any input action key, then release the action key, and observe whether movement ceases instantly.
+- The prompt requires that the player character stop moving immediately when any pressed input action key is released.
+
+19. The player character can briefly jump right after walking off any ledge.
+- Run the main scene, walk off any platform, then quickly press the Space key to perform a jump right after leaving the ledge.
+- The prompt requires that the player character have a coyote timer to allow players to jump fairly immediately after walking off a ledge.
+
+20. The player character can repeatedly pause and float while airborne.
+- Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
+- The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
+
+21. The player character properly collides with the level environment.
+- Run the main scene and move the player across platforms and into walls, confirming the character does not pass through solid terrain.
+- The prompt requires that the player character have a functional body collision to interact correctly with the level environment.
+
+22. The player character remains consistently visible in the camera view.
+- Run the main scene and move the player character across the level to confirm that the sprite remains within the visible camera view.
+- The prompt requires the player character to remain consistently framed and visible to ensure continuous gameplay.
+
+23. The player character correctly transitions between movement states.
+- Run the main scene and observe the player character as it falls, walks, jumps, double-jumps, floats, ledge-climbs, and ledge-jumps.
+- The prompt requires a functioning state machine that manages the player character's movement between all movement states.
+
+24. A "FALL_GRAVITY" constant controls the player's gravity while falling.
+- Inspect the GDScript code for an unchangeable constant named "FALL_GRAVITY" affecting the falling gravity of the player character.
+- The prompt requires the GDScript code to define falling gravity as an unchangeable constant, but configurable for movement balance.
+
+25. A "FALL_VELOCITY" constant controls the player's falling speed.
+- Inspect the GDScript code for an unchangeable constant named "FALL_VELOCITY" affecting the fall speed of the player character.
+- The prompt requires the GDScript code to define falling velocity as an unchangeable constant, but configurable for movement balance.
+<br>
+Godot - https://feather.openai.com/tasks/ec0e1bf8-8038-4773-aa40-63aff5cc4cec/stage/prompt_creation - Fixing done.
