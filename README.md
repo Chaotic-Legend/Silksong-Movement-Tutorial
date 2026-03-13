@@ -386,4 +386,4 @@ This task is representative of work commonly assigned to a junior-level develope
 - Run the main scene, quickly press the Space key during a ledge climb, and observe the player character perform a ledge jump.
 - The prompt requires that the player character can jump over any ledge when pressing the Space key during the ledge climb.
 <br>
-Godot - https://feather.openai.com/tasks/ec0e1bf8-8038-4773-aa40-63aff5cc4cec/stage/prompt_creation - Fixing done.
+Godot - https://feather.openai.com/tasks/ec0e1bf8-8038-4773-aa40-63aff5cc4cec/stage/prompt_creation - Awaiting response.
