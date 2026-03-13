@@ -104,7 +104,7 @@ The player controller incorporates ledge detection to identify climbable surface
 
 4. The project's physics gravity value is 980 pixels/s^2.
 - Confirm that the Default Gravity value is equal to 980.0 px/s^2 by clicking on "Project Settings," then "Physics," and then "2D."
-- The prompt requires that the project's physics gravity be exactly 980.0 pixels per second squared for the environment.
+- The prompt requires that the project environment use a physics gravity of exactly 980.0 pixels per second squared.
 
 5. The project's default texture filter is assigned to nearest.
 - Confirm that the Default Texture Filter is assigned to "Nearest" by clicking on "Project Settings," then "Rendering," and then "Textures."
