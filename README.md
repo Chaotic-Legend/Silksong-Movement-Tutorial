@@ -220,3 +220,10 @@ The player controller incorporates ledge detection to identify climbable surface
 
 # Silksong Movement Tutorial - Part 2 #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 2](https://www.youtube.com/watch?v=yv9J5N4FeDY) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
+
+# Assets #
+[Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
+
+![Sprite Asset](assets/art/2d/player/stick_figure/sf_idle_pixel.png)
+
+# Create a Godot task #
