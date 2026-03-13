@@ -226,7 +226,7 @@ This tutorial guides viewers through building an advanced 2D player controller i
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
-![Sprite Asset](assets/art/2d/player/stick_figure/sf_idle_pixel.png)
+![Sprite Asset](assets/art/2d/player/stick_figure/sf_run_pixel.png)
 
 # Create a Godot task #
 ### **Task prompt** ###
