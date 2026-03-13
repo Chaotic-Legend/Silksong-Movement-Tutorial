@@ -92,15 +92,15 @@ The player controller incorporates ledge detection to identify climbable surface
 <br>
 1. The project's viewport width value is 1152. 
 - Confirm that the Viewport Width value is equal to 1152 by navigating to "Project Settings," then "Display," and then "Window."
-- The prompt requires that the project's resolution be 1152 x 648, and because these values are adjustable individually, they should each receive partial credit.
+- The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
 
 2. The project's viewpoint height value is 648.
 - Confirm that the Viewport Height value is equal to 648 by navigating to "Project Settings," then "Display," and then "Window."
-- The prompt requires that the project's resolution be 1152 x 648, and because these values are adjustable individually, they should each receive partial credit.
+- The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
 
 3. The scene's background color is filled with the color #4d4d4d.
 - Verify that the Default Clear Color hex value is #4d4d4d by clicking on "Project Settings," then "Rendering," and then "Environment."
-- The prompt requires that the entire scene background have a color of #4d4d4d for the environment.
+- The prompt requires the scene background to use a dark gray color appropriate to the environment.
 
 4. The project's physics gravity value is 980 pixels/s^2.
 - Confirm that the Default Gravity value is equal to 980.0 px/s^2 by clicking on "Project Settings," then "Physics," and then "2D."
@@ -112,11 +112,11 @@ The player controller incorporates ledge detection to identify climbable surface
 
 6. The Input Map includes a "move_left" action bound to the A key.
 - Confirm an input action exists with the A key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
-- The prompt requires that the A key be assigned as a keyboard input action to move the player character to the left.
+- The prompt requires that pressing the A key should cause the player character to move left.
 
 7. The Input Map includes a "move_right" action bound to the D key.
 - Confirm an input action exists with the D key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
-- The prompt requires that the D key be assigned as a keyboard input action to move the player character to the right.
+- The prompt requires that pressing the D key should cause the player character to move right.
 
 8. The Input Map includes a "jump" action bound to the Space key.
 - Confirm an input action exists with the Space key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
@@ -164,7 +164,7 @@ The player controller incorporates ledge detection to identify climbable surface
 
 19. The player character can briefly jump right after walking off any ledge.
 - Run the main scene, walk off any platform, then quickly press the Space key to perform a jump right after leaving the ledge.
-- The prompt requires that the player character have a coyote timer to allow players to fairly jump right after walking off any ledge.
+- The prompt requires that the player character have a coyote timer to allow players to jump fairly immediately after walking off a ledge.
 
 20. The player character can repeatedly pause and float while airborne.
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
@@ -176,10 +176,10 @@ The player controller incorporates ledge detection to identify climbable surface
 
 22. The player character remains consistently visible in the camera view.
 - Run the main scene and move the player character across the level to confirm that the sprite remains within the visible camera view.
-- The prompt requires that the player character remain properly framed and visible to ensure clear and continuous gameplay.
+- The prompt requires the player character to remain consistently framed and visible to ensure continuous gameplay.
 
 23. The player character correctly transitions between movement states.
-- Run the main scene and observe the player character as it falls, walks, jumps, double jumps, floats, ledge climbs, and ledge jumps.
+- Run the main scene and observe the player character as it falls, walks, jumps, double-jumps, floats, ledge-climbs, and ledge-jumps.
 - The prompt requires a functioning state machine that manages the player character's movement between all movement states.
 
 24. A "FALL_GRAVITY" constant controls the player's gravity while falling.
