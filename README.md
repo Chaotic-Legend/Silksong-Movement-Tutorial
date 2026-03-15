@@ -286,103 +286,87 @@ This task is representative of work commonly assigned to a junior-level develope
 
 <ins> Rubric Items </ins>
 <br>
-1. The viewport width value of the project environment is 1152.
-- Confirm that the Viewport Width value is equal to 1152 by navigating to "Project Settings," then "Display," and then "Window."
-- The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
+1. The background color of the project environment is dark gray.
+- Run the main scene and observe that the environment's background color remains a consistent dark gray throughout the entire level.
+- The prompt requires a level background in dark gray, ensuring the color remains consistent with and appropriate for the environment.
 
-2. The viewpoint height value of the project environment is 648.
-- Confirm that the Viewport Height value is equal to 648 by navigating to "Project Settings," then "Display," and then "Window."
-- The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
-
-3. The background color of the project environment is dark gray.
-- Confirm that the Default Clear Color value is #4d4d4d by clicking on "Project Settings," then "Rendering," and then "Environment."
-- The prompt requires the scene background to use a dark gray color appropriate to the environment.
-
-4. The gravity value of the project environment is 980 pixels/s^2.
-- Confirm that the Default Gravity value is equal to 980.0 px/s^2 by clicking on "Project Settings," then "Physics," and then "2D."
-- The prompt requires that the project environment use a physics gravity of exactly 980.0 pixels per second squared.
-
-5. The pixel-art assets appear sharp with clearly defined details.
+2. The pixel-art assets appear sharp with clearly defined details.
 - Run the main scene and observe the environment and character sprite to confirm that the pixel-art textures appear sharp and crisp.
 - The prompt requires that the sprite assets display a clearly visible pixel-art texture with crisp edges and preserved detail.
 
-6. The player character can move leftward when pressing the A key.
-- Run the main scene, press the A key on your keyboard, and observe that the player character moves left across the level environment.
-- The prompt requires that the A key be assigned as a keyboard input action to move the player character to the left during gameplay.
+3. The player character can move left and right using the A and D keys.
+- Run the main scene, press the A key first, and then the D key on your keyboard to observe that the player moves left and right.
+- The prompt requires that the A key and D key be assigned as keyboard input actions to move the player character left and right.
 
-7. The player character can move rightward when pressing the D key.
-- Run the main scene, press the D key on your keyboard, and observe that the player character moves right across the level environment.
-- The prompt requires that the D key be assigned as a keyboard input action to move the player character to the right during gameplay.
-
-8. The player character can jump upward when pressing the Space key.
+4. The player character can jump upward when pressing the Space key.
 - Run the main scene, press the Space key on your keyboard, and observe that the player character jumps up in the level environment.
 - The prompt requires assigning the Space key as a keyboard input action to make the player character jump during gameplay.
 
-9. The player character double jumps when pressing the Space key twice.
-- Run the main scene, press the Space key twice, and observe that the player character double jumps up in the level environment.
+5. The player double jumps when pressing the Space key while airborne.
+- Run the main scene, jump and press the Space key while airborne, and observe that the player character double jumps in the level.
 - The prompt requires that pressing the Space key twice causes the player character to double-jump upward in the level environment.
 
-10. The player character can quickly sprint when pressing the Shift key.
+6. The player character can quickly sprint when pressing the Shift key.
 - Run the main scene, press and hold down the Shift key while moving left or right, and verify that the character starts sprinting.
 - The task prompt requires that the player character can sprint to increase horizontal movement speed throughout the environment.
 
-11. The player character can slide downward against any vertical wall.
+7. The player character can slide downward against any vertical wall.
 - Run the main scene, press the player character against any vertical wall, and verify that the character begins wall-sliding downward.
 - The task prompt requires that the player character can wall slide and descend when pressed against any vertical wall surface.
 
-12. The player character can jump away from vertical walls while sliding.
+8. The player character can jump away from vertical walls while sliding.
 - Run the main scene, press the Space key while against any vertical wall, and verify that the character can jump away from the wall.
 - The task prompt requires that the player character be able to wall-jump and propel themselves away from any vertical wall.
 
-13. The player character can climb upward along any vertical wall surface.
+9. The player character can climb upward along any vertical wall surface.
 - Run the main scene, press the player character against any vertical wall, and verify that the character can climb the wall by jumping up.
 - The task prompt requires that the player character can wall-climb and ascend when jumping upward against any vertical wall surface.
 
-14. The player character can perform a short directional dash movement.
+10. The player character can perform a short directional dash movement.
 - Run the main scene, press the Shift key while moving left or right, and verify that the character performs a short burst of quick speed.
 - The task prompt requires that the player character can quickly dash for a short burst of horizontal movement to increase speed.
 
-15. The player character can demonstrate smooth turning when moving.
+11. The player character can demonstrate smooth turning when moving.
 - Run the main scene, move the player character in one direction, then quickly turn to the opposite direction for a smooth transition.
 - The task prompt requires the player character to demonstrate smooth directional turning behavior while moving left or right.
 
-16. The player character can float slowly and smoothly while airborne.
+12. The player character can float slowly and smoothly while airborne.
 - Run the main scene, double jump off a platform, press the Space key, and verify that the character can float slowly and smoothly.
 - The task prompt requires updating the float state so the player character can descend slowly and smoothly while airborne.
 
-17. The player character stops moving when any input key is released.
+13. The player character stops moving when any input key is released.
 - Run the main scene, press any input action key, then release the action key, and observe whether movement ceases instantly.
 - The prompt requires that the player character stop moving immediately when any pressed input action key is released.
 
-18. The player character can briefly jump right after leaving any ledge.
+14. The player character can briefly jump right after leaving any ledge.
 - Run the main scene, walk off any platform, then quickly press the Space key to perform a jump right after leaving the ledge.
 - The prompt requires the player character to have a short window to briefly jump after losing contact with a ledge.
 
-19. The player character can repeatedly pause and float while airborne.
+15. The player character can repeatedly pause and float while airborne.
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
 - The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
 
-20. The player character properly collides with the level environment.
+16. The player character properly collides with the level environment.
 - Run the main scene and move the player across platforms and into walls, confirming the character does not pass through solid terrain.
 - The prompt requires the player character to have a functional body collision to interact accurately with the level environment.
 
-21. The player character remains consistently visible in the camera view.
+17. The player character remains consistently visible in the camera view.
 - Run the main scene and move the player character across the level to confirm that the sprite remains within the visible camera view.
 - The prompt requires the player character to remain consistently framed and visible to ensure continuous gameplay.
 
-22. The player character correctly transitions between movement states.
+18. The player character correctly transitions between movement states.
 - Run the main scene and observe the player character as it falls, walks, jumps, double-jumps, floats, ledge-climbs, and ledge-jumps.
 - The prompt requires a functioning state machine that manages the player character's movement between all movement states.
 
-23. The player character can jump higher when holding the Space key.
+19. The player character can jump higher when holding the Space key.
 - Run the main scene, quickly tap the Space key for a normal jump, and then press and hold the Space key for a high jump.
 - The prompt requires that pressing and holding the Space key should cause the player character to perform a high jump.
 
-24. The player character can climb over any ledge when in close contact.
+20. The player character can climb over any ledge when in close contact.
 - Run the main scene, move close to any ledge in the level, and observe the player character automatically perform a ledge climb.
 - The prompt requires that the player character can automatically climb over any ledge when the game detects it as climbable.
 
-25. The player character can ledge jump when climbing over any ledge.
+21. The player character can ledge jump when climbing over any ledge.
 - Run the main scene, quickly press the Space key during a ledge climb, and observe the player character perform a ledge jump.
 - The prompt requires that the player character can jump over any ledge when pressing the Space key during the ledge climb.
 <br>
