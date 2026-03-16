@@ -308,7 +308,7 @@ This task is representative of work commonly assigned to a junior-level develope
 
 5. The player double jumps when pressing the Space key while airborne.
 - Run the main scene, jump and press the Space key while airborne, and observe that the player character double jumps in the level.
-- The prompt requires that pressing the Space key twice causes the player character to double-jump upward in the level environment.
+- The prompt requires that pressing the Space key twice while airborne causes the player character to double-jump upward.
 
 6. The player character can quickly sprint when pressing the Shift key.
 - Run the main scene, press and hold down the Shift key while moving left or right, and verify that the character starts sprinting.
