@@ -229,6 +229,10 @@ This tutorial guides viewers through building an advanced 2D player controller i
 ![Sprite Asset](assets/art/2d/player/stick_figure/sf_run_pixel.png)
 
 # Create a Godot task #
+<ins> What application is this task for? </ins>
+<br>
+Godot
+
 ### **Task prompt** ###
 First, enter the **task prompt** and any relevant reference files (e.g., docs, diagrams, sketches, photos, schematics).
 
