@@ -144,7 +144,7 @@ The player controller incorporates ledge detection to identify climbable surface
 
 14. Pressing the Space key thrice makes the player character float down.
 - Run the main scene and press the jump key three times, holding it down on the third press to make the player character float down.
-- Pressing the Space key three times, holding it on the third press, should cause the player to float down, as required by the prompt.
+- The prompt requires that pressing the Space key three times and holding it on the third press should cause the player to float down.
 
 15. Holding the Space key makes the player jump higher than tapping it.
 - Run the main scene, quickly tap the Space key for a normal jump, and then press and hold the Space key for a high jump.
