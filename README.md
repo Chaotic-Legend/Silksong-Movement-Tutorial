@@ -1,6 +1,6 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.3-blue?style=plastic&logo=godotengine)](https://godotengine.org/) ![GitHub top language](https://img.shields.io/github/languages/top/Chaotic-Legend/Silksong-Movement-Tutorial?logo=godotengine)
 
-# Silksong Movement Tutorial - Part 1 #
+# Silksong Movement Tutorial - Part 1 | Project Moonstone #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 1](https://www.youtube.com/watch?v=lNePLabodBk) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
 
 This beginner-friendly tutorial guides viewers through building a 2D player controller inspired by the platforming movement of Hornet from Hollow Knight: Silksong. The project demonstrates how to structure and implement movement states, collision behavior, and input mapping within the Godot Engine using GDScript. By following along, you will create a robust, flexible, and expandable 2D platforming foundation that covers essential mechanics such as walking, falling, jumping, double jumping, floating, ledge climbing, and ledge jumping. It also served as the foundation for completing a structured implementation task on Feather, with the project integrated into the wider development workflow supporting the Handshake AI Project Moonstone initiative.
@@ -218,7 +218,7 @@ The player controller incorporates ledge detection to identify climbable surface
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 
-# Silksong Movement Tutorial - Part 2 #
+# Silksong Movement Tutorial - Part 2 | Project Touchstone #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 2](https://www.youtube.com/watch?v=yv9J5N4FeDY) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
 
 This tutorial guides viewers through building an advanced 2D player controller in the Godot Engine, inspired by the platforming movement of Hornet from Hollow Knight: Silksong. As a follow-up project, this video demonstrates how to implement complex mechanics such as wall sliding, wall jumping, wall climbing, dashing, sprinting, and an updated float state. It covers structuring movement states, handling collision and timer behavior with different nodes, setting up input actions, and writing robust GDScript code to create a flexible, expandable, and responsive platforming experience. It also served as the foundation for a structured implementation task on Feather, with the project integrated into the broader development workflow supporting the Handshake AI Project Touchstone initiative.
