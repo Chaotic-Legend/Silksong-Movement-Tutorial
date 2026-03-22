@@ -218,6 +218,8 @@ The player controller incorporates ledge detection to identify climbable surface
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 
+---
+
 # Silksong Movement Tutorial - Part 1 | Project Touchstone #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 1](https://www.youtube.com/watch?v=lNePLabodBk) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
 
@@ -226,7 +228,7 @@ This beginner-friendly tutorial guides viewers through building a 2D player cont
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
-![Sprite Asset](assets/art/2d/player/stick_figure/sf_idle_pixel.png)
+![Sprite Asset](assets/art/2d/player/stick_figure/sf_walk_pixel.png)
 
 # Create a Godot task #
 <ins> What application is this task for? </ins>
@@ -298,6 +300,11 @@ This task represents a realistic and appropriate assignment for a junior-level d
 <ins> Rubric Items </ins>
 <br>
 
+
+<br>
+Godot - https://feather.openai.com/tasks/9a1bbcdb-9924-411f-b871-9938ee7ca897/stage/prompt_creation - Awaiting response.
+
+---
 
 # Silksong Movement Tutorial - Part 2 | Project Touchstone #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 2](https://www.youtube.com/watch?v=yv9J5N4FeDY) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
