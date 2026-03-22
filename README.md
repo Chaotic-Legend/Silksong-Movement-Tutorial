@@ -299,8 +299,85 @@ This task represents a realistic and appropriate assignment for a junior-level d
 
 <ins> Rubric Items </ins>
 <br>
+1. The background color of the project environment is dark gray.
+- Run the main scene and observe that the environment's background color remains a consistent dark gray throughout the entire level.
+- The prompt requires a level background in dark gray, ensuring the color remains consistent with and appropriate for the environment.
 
+2. The gravity physics produces a natural and consistent downward pull.
+- Run the main scene and observe the player character falling to confirm that gravity causes a natural downward acceleration.
+- The prompt requires that the environment's gravity produce realistic falling behavior and a consistent downward pull for entities.
 
+3. The blue stick figure pixel sprite appears sharp during gameplay.
+- Run the main scene and observe the player character sprite to confirm that the blue stick figure appears sharp and crisp.
+- The prompt requires that the blue stick-figure character sprite remain sharp and clearly visible throughout gameplay.
+
+4. The terrain environment pixel sprite appears sharp during gameplay.
+- Run the main scene and observe the level environment to confirm that the green and brown textures appear sharp and crisp.
+- The prompt requires that the terrain level environment sprite remain sharp and clearly visible throughout gameplay.
+
+5. The action animation frames for the player character all run smoothly.
+- Run the main scene and observe the player character performing different actions to confirm that all animation frames play smoothly.
+- The prompt requires that each animation for movement actions flow seamlessly and have consistent timing with no visible stuttering.
+
+6. The player character can move left when pressing the A key.
+- Run the main scene, press the A key on your keyboard, and observe that the player character moves left across the level environment.
+- The prompt requires that the A key be assigned as a keyboard input to move the player character leftward during gameplay.
+
+7. The player character can move right when pressing the D key.
+- Run the main scene, press the D key on your keyboard, and observe that the player character moves right across the level environment.
+- The prompt requires that the D key be assigned as a keyboard input to move the player character to the right during gameplay.
+
+8. The player character can jump upward when pressing the Space key.
+- Run the main scene, press the Space key on your keyboard, and observe that the player character jumps up in the level environment.
+- The prompt requires assigning the Space key as a keyboard input action to make the player character jump during gameplay.
+
+9. The player double jumps when pressing the Space key twice.
+- Run the main scene, jump and press the Space key while airborne, and observe that the player character double jumps in the level.
+- The prompt requires that pressing the Space key twice while airborne causes the player character to double-jump.
+
+10. The player character can jump higher when holding the Space key.
+- Run the main scene, quickly tap the Space key for a normal jump, and then press and hold the Space key for a high jump.
+- The prompt requires that pressing and holding the Space key should cause the player character to perform a high jump.
+
+11. The player character can float downward smoothly while airborne.
+- Run the main scene, double jump off a platform, and press and hold the Space key to confirm that the character can float downward.
+- The prompt requires that pressing the Space key three times, holding it on the third press, should cause the player to float down.
+
+12. The player character can repeatedly pause and float while airborne.
+- Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
+- The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
+
+13. The player character can climb over any ledge when in close contact.
+- Run the main scene, move close to any ledge in the level, and observe the player character automatically perform a ledge climb.
+- The prompt requires that the player character can automatically climb over any ledge when the game detects it as climbable.
+
+14. The player character can briefly jump right after leaving any ledge.
+- Run the main scene, walk off any platform, then quickly press the Space key to perform a jump right after leaving the ledge.
+- The prompt requires the player character to have a short window to briefly jump after losing contact with a ledge.
+
+15. The player character can ledge jump when climbing over any ledge.
+- Run the main scene, quickly press the Space key during a ledge climb, and observe the player character perform a ledge jump.
+- The prompt requires that the player character can jump over any ledge when pressing the Space key during the ledge climb.
+
+16. The player character stops moving when any input key is released.
+- Run the main scene, press any input action key, then release the action key, and observe whether movement ceases instantly.
+- The prompt requires that the player character stop moving immediately when any pressed input action key is released.
+
+17. The player character properly collides with the level environment.
+- Run the main scene and move the player across platforms and into walls, confirming the character does not pass through solid terrain.
+- The prompt requires the player character to have a functional body collision to interact accurately with the level environment.
+
+18. The player character correctly transitions between movement states.
+- Run the main scene and observe the player character as it falls, walks, jumps, double-jumps, floats, ledge-climbs, and ledge-jumps.
+- The prompt requires a functioning state machine that manages the player character's movement between all movement states.
+
+19. The player character faces the correct direction during movement.
+- Run the main scene, press the A and D keys to move left and right, and confirm that the player character faces the movement direction.
+- The prompt requires that the player character visually face the direction of motion to reflect accurate orientation during gameplay.
+
+20. The camera follows the player character smoothly during gameplay.
+- Run the main scene and move the player character across the level to confirm that the game camera smoothly tracks the player.
+- The prompt requires smooth camera tracking to maintain a stable and consistent view of the player character throughout gameplay.
 <br>
 Godot - https://feather.openai.com/tasks/9a1bbcdb-9924-411f-b871-9938ee7ca897/stage/prompt_creation - Awaiting response.
 
