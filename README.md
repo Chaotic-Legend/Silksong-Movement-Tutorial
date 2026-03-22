@@ -218,10 +218,91 @@ The player controller incorporates ledge detection to identify climbable surface
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
 - The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
 
+# Silksong Movement Tutorial - Part 1 | Project Touchstone #
+[Godot Tutorial 2D - Programming Silksong Movement - Part 1](https://www.youtube.com/watch?v=lNePLabodBk) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
+
+This beginner-friendly tutorial guides viewers through building a 2D player controller inspired by the platforming movement of Hornet from Hollow Knight: Silksong. The project demonstrates how to structure and implement movement states, collision behavior, and input mapping within the Godot Engine using GDScript. By following along, you will create a robust, flexible, and expandable 2D platforming foundation that covers essential mechanics such as walking, falling, jumping, double jumping, floating, ledge climbing, and ledge jumping. It also served as the foundation for completing a structured implementation task on Feather, with the project integrated into the wider development workflow supporting the Handshake AI Project Moonstone initiative.
+
+# Assets #
+[Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
+
+![Sprite Asset](assets/art/2d/player/stick_figure/sf_idle_pixel.png)
+
+# Create a Godot task #
+<ins> What application is this task for? </ins>
+<br>
+Godot
+
+### **Task prompt** ###
+First, enter the **task prompt** and any relevant reference files (e.g., docs, diagrams, sketches, photos, schematics).
+
+Tasks should sound like what a manager might give a skilled but junior employee: high-level guidance with some leeway on executional details, but with very clear success metrics. What a good outcome looks like must be very clear and easy to understand.
+
+Include any relevant **reference files** (docs, diagrams, sketches, photos, schematics, etc.) needed for someone to do this task.
+
+Reminder on the difference between reference and starting state files:
+- **Reference files**: anything the Employee should look at or read while completing the project that does not need to be directly loaded into the application (*'please make something that looks like XYZ image'*)
+- **Starting state files (upload below)**: anything that the Employee would need to load into their workspace to complete the task (*'here is the existing file you should adapt'*)
+
+<ins> Task prompt (ask the Employee) </ins>
+<br>
+We are beginning development of the movement system for our 2D pixel-art platformer prototype game. The starting build consists of a functional level environment featuring green and brown textures, an original blue stick-figure player character sprite, and properly configured collision bodies for both the level environment and the player character. It also includes all animation frames for the player character's various movement actions, a camera node to ensure consistent gameplay display, and other necessary nodes to ensure the build runs correctly. Your task is to build upon this starting foundation by implementing a functional player controller, core movement mechanics, and a foundational state machine inspired by Hornet's movement style from Hollow Knight: Silksong. The system should enable responsive, fluid platforming by carefully configuring physics behavior and control inputs while preserving the visual clarity expected in a pixel-art platformer.
+
+The scene background should use a dark gray color appropriate for a simple testing environment, and the project should apply design settings that preserve the crisp visual appearance of all pixel-art assets. The player character should be controllable using standard keyboard inputs: A to move left, D to move right, and the Space key to jump. Implement the movement controller to support basic platforming mechanics, enabling the player character to interact dynamically with the level environment. The system must include properly configured gravity physics that produce a natural, consistent downward pull during gameplay and ensure the player character visually faces the correct direction as it moves. Overall, the movement system should establish a responsive and reliable foundation for platforming, aligning physics behavior, player input, and visual feedback to support a polished gameplay experience. The new movement system should include the following movement abilities:
+
+- Horizontal movement allows the player character to walk left.
+- Horizontal movement allows the player character to walk right.
+- A single jump enables the player character to ascend upward.
+- A double jump provides an additional midair boost to extend reach.
+- A variable jump height provides better control over jump height.
+- Floating to descend and make more precise landings smoothly.
+- Midair floating allows multiple pauses for extended air control.
+- Ledge climbing enables smooth movement over platform edges.
+- A brief grace period allows jumping shortly after leaving a platform.
+- A ledge jump enables upward movement while climbing a ledge.
+
+The player character should stop moving when movement input is released, retain the ability to jump briefly after stepping off a platform, and be able to activate floating multiple times while airborne according to the intended cooldown behavior. The movement system must also incorporate new jump mechanics that enhance player control during traversal, since jumping will be the most-used action for getting across the level. Pressing the Space key once makes the player character jump, pressing it a second time in midair triggers a double jump, and pressing it a third time while holding it enables slow floating. The jump system should support variable jump height, allowing the character to reach greater heights when the Space key is held down rather than tapped quickly. Furthermore, the player controller must interact properly with the level environment by colliding with platforms and walls, ensuring the character cannot pass through solid terrain. When the character approaches a climbable ledge, defined as being close to an edge without any obstruction, the system should automatically allow them to climb over it upon close contact.
+
+During the ledge-climbing action, pressing the Space key will enable the player character to perform a ledge jump, propelling them upward from the ledge. The player character must remain visible and tracked in the camera view throughout gameplay to ensure a consistent on-screen experience. The movement should feel responsive, fluid, and coherent during gameplay, avoiding stickiness or input lag while ensuring smooth transitions between actions. The player character should transition smoothly between movement states, including walking, jumping, double jumping, falling, floating, and ledge traversal. Once implemented, the player character should be able to navigate the given platforming test environment, demonstrating that all advanced movement mechanics work together seamlessly. Additionally, the design must be modular to facilitate adding new abilities and gameplay features in future development without necessitating major architectural changes.
+
+<ins> Which of the following best fits this task? </ins>
+<br>
+Additional work on an existing very large project
+
+<ins> How long would you anticipate this task taking an 'Employee' to complete? (in hours) </ins>
+<br>
+1
+
+### **Starting state** ###
+Please describe and include below any information about the starting state of this project:
+- Existing work to be modified
+- Other assets or other inputs the Employee needs to bring to be able to complete this task
+
+Reminder on the difference between the starting state and the reference files:
+- **Starting state files**: anything that the Employee would need to load into their workspace to complete the task ('*here is the existing file you should adapt*')
+- **Reference files (upload above)**: anything the Employee should look at or read while completing the project that does not need to be directly loaded into the application ('*please make something that looks like XYZ image*')
+
+<ins> Starting state description </ins>
+<br>
+The starting state for this task is a preconfigured Godot Engine project layout that provides a foundational framework for a 2D platformer. It includes a structured project setup with organized folders for assets, scenes, scripts, and resources, as well as a functional test level featuring green and brown textures to evaluate player movement and interactions. The player character is represented by a blue stick-figure sprite set, with individual animation frames for actions such as idle, walking, running, jumping, double jumping, floating, ledge climbing, and ledge jumping. These assets not only provide visual support for validating movement in the environment but also serve as a foundation for assigning and testing keybindings, ensuring that each input corresponds accurately to the intended animation and action. When running the starting state, the project only displays the level and spawns the player character with its collision body, but movement and other gameplay mechanics remain inactive. The current player controller script and scene need modification and expansion to implement the basic movement systems effectively, which requires familiarity with GDScript programming, node composition, and the ability to maintain an extensible architecture.
+
+### **Overall context** ###
+Finally, include context on this task and why it is realistic and representative of real-life work:
+- Why is this a reasonable task for a manager to ask a junior-level employee to do?
+- Is there a larger project it might be a part of?
+
+<ins> Task context </ins>
+<br>
+This task represents a realistic and appropriate assignment for a junior-level developer because it focuses on implementing foundational gameplay systems within an existing project structure rather than building systems from scratch. It requires applying core skills such as scripting in GDScript, working with node-based architectures, handling player input, and configuring physics behavior, which are common responsibilities for entry-level game developers. The scope is well-defined, with clear requirements for movement mechanics and expected outcomes, allowing the employee to focus on execution, debugging, and refinement while reinforcing best practices in modular design and clean code organization. Additionally, this task mirrors real-world development workflows, in which junior developers are often responsible for extending existing systems, integrating assets, and implementing gameplay features in accordance with design specifications. It also encourages problem-solving and iteration, particularly in achieving responsive, fluid movement, a critical aspect of game feel in platformers. This work would typically be part of a larger game development project, specifically within the early prototyping or vertical slice phase. Establishing a solid, extensible movement system is a key milestone, as it lays the foundation for future mechanics, including combat, enemy interactions, level design, and player abilities. By completing this task, the employee contributes directly to building a scalable gameplay framework that can support continued development and feature expansion.
+
+<ins> Rubric Items </ins>
+<br>
+
+
 # Silksong Movement Tutorial - Part 2 | Project Touchstone #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 2](https://www.youtube.com/watch?v=yv9J5N4FeDY) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
 
-This tutorial guides viewers through building an advanced 2D player controller in the Godot Engine, inspired by the platforming movement of Hornet from Hollow Knight: Silksong. As a follow-up project, this video demonstrates how to implement complex mechanics such as wall sliding, wall jumping, wall climbing, dashing, sprinting, and an updated float state. It covers structuring movement states, handling collision and timer behavior with different nodes, setting up input actions, and writing robust GDScript code to create a flexible, expandable, and responsive platforming experience. It also served as the foundation for a structured implementation task on Feather, with the project integrated into the broader development workflow supporting the Handshake AI Project Touchstone initiative.
+This tutorial guides viewers through building an advanced 2D player controller in the Godot Engine, inspired by the platforming movement of Hornet from Hollow Knight: Silksong. As a follow-up project, this video demonstrates how to implement complex mechanics, including wall sliding, wall jumping, wall climbing, dashing, sprinting, and an updated float state. It covers structuring movement states, handling collision and timer behavior with different nodes, setting up input actions, and writing robust GDScript code to create a flexible, expandable, and responsive platforming experience. It also served as the foundation for a structured implementation task on Feather, with the project integrated into the broader development workflow supporting the Handshake AI Project Touchstone initiative.
 
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
@@ -378,4 +459,4 @@ This task is representative of work commonly assigned to a junior-level develope
 - Run the main scene, quickly press the Space key during a ledge climb, and observe the player character perform a ledge jump.
 - The prompt requires that the player character can jump over any ledge when pressing the Space key during the ledge climb.
 <br>
-Godot - https://feather.openai.com/tasks/ec0e1bf8-8038-4773-aa40-63aff5cc4cec/stage/prompt_creation - Awaiting response.
+Godot - https://feather.openai.com/tasks/ec0e1bf8-8038-4773-aa40-63aff5cc4cec/stage/prompt_creation - Finished prompt creation.
