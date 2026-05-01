@@ -481,6 +481,7 @@ frame_progress = 0.14241342
 position = Vector2(0, -33)
 
 [node name="Camera2D" type="Camera2D" parent="CameraOffset" unique_id=816945826]
+texture_filter = 1
 zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
