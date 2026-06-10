@@ -13,7 +13,7 @@ config_version=5
 config/name="Silksong Movement Tutorial"
 run/main_scene="uid://da84ajuoi0pue"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://bekx56tcyygie"
+config/icon="uid://cydlxtvf8avsx"
 
 [input]
 
