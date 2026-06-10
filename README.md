@@ -1,4 +1,4 @@
-[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.2-blue?style=plastic&logo=godotengine)](https://godotengine.org/) ![GitHub top language](https://img.shields.io/github/languages/top/Chaotic-Legend/Silksong-Movement-Tutorial?logo=godotengine)
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.3-blue?style=plastic&logo=godotengine)](https://godotengine.org/) ![GitHub top language](https://img.shields.io/github/languages/top/Chaotic-Legend/Silksong-Movement-Tutorial?logo=godotengine)
 
 # Silksong Movement Tutorial - Part 1 | Project Moonstone #
 [Godot Tutorial 2D - Programming Silksong Movement - Part 1](https://www.youtube.com/watch?v=lNePLabodBk) by [IcyEngine](https://icyengine.itch.io/) ([Discord](https://discord.com/invite/Ev9g6kBPnN))
@@ -8,7 +8,7 @@ This video tutorial guides viewers through building a 2D player controller inspi
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
-![Sprite Asset](assets/art/2d/player/stick_figure/sf_idle_pixel.png)
+![Sprite Asset](assets/stick_figure/sf_idle_pixel.png)
 
 # Create a Godot task #
 <ins> **Step 1: Context setting** </ins>
@@ -26,11 +26,11 @@ Inspired by Hollow Knight: Silksong's gameplay, the selected project will implem
 - Start Point: https://youtu.be/lNePLabodBk?si=gugDO2DURNJEcp2t&t=49
 - End Point: https://youtu.be/lNePLabodBk?si=-RUTf52q6qv5uI3X&t=1344
 
-In this segment, the video tutorial demonstrates a systematic process for programming the 2D platformer movement and mechanics from Hollow Knight: Silksong in the Godot Engine. It covers setting up the project with a character sprite and essential nodes, configuring keybinds, and building a robust state machine to manage various player actions. The video tutorial meticulously breaks down each movement, showing how to implement physics, animations, and state transitions. The core of the development focuses on implementing distinct movement states, such as falling under gravity, walking, single jumping, double jumping, controlled floating, ledge climbing, and canceling ledge climbs. Each step builds on the previous one, progressively introducing new constants, variables, and functions to form a cohesive, scalable character controller that recreates Hornet's platforming movement.
+In this segment, the video tutorial demonstrates a systematic process for programming the 2D platformer movement and mechanics from Hollow Knight: Silksong in the Godot Engine. It covers setting up the project with a character sprite and essential nodes, configuring keybinds, and building a robust state machine to manage various player actions. The video tutorial meticulously breaks down each movement, showing how to implement physics, animations, and state transitions. The primary focus of development is implementing a variety of movement states, including falling under gravity, walking, single jumping, double jumping, controlled floating, ledge climbing, and ledge climb cancellation. Each step builds on the previous one, progressively introducing new constants, variables, and functions to form a cohesive, scalable character controller that recreates Hornet's platforming movement.
 
 <ins> Briefly describe the inputs to / input state of this project. </ins>
 <br>
-The input state consists of a newly created Godot Engine project initialized using the template files from the Tutorial Ready Template pack created by IcyEngine on itch.io. The project begins by extracting the assets folder from the tutorial_ready_template.zip file, which provides the foundational resources and structure needed to start the implementation. This project includes a preconfigured assets folder containing a functional test level, a structured node hierarchy, a starter player controller, and an original blue stick figure sprite asset. This template controller utilizes a CharacterBody2D root node, a CollisionShape2D node configured with a capsule shape for the sprite, a Camera2D node that follows the player character during movement, and an AnimatedSprite2D node containing multiple animation frames. https://icyengine.itch.io/silksong-movement-tutorial
+The input state consists of a newly created Godot Engine project initialized using the template files from the Tutorial Ready Template pack created by IcyEngine on itch.io. The project begins by extracting the assets folder from the tutorial_ready_template.zip file, providing the foundational resources and project structure required for implementation. This project includes a preconfigured assets folder containing a functional test level, a structured node hierarchy, a starter player controller, and an original blue stick figure sprite asset. This template controller utilizes a CharacterBody2D root node, a CollisionShape2D node configured with a capsule shape for the sprite, a Camera2D node that follows the player character during movement, and an AnimatedSprite2D node containing multiple animation frames. https://icyengine.itch.io/silksong-movement-tutorial
 
 <ins> **Step 2: Task completion** </ins>
 <br>
@@ -42,7 +42,7 @@ Starting with the YouTube video tutorial, I created a new Godot project named "S
 
 <ins> Brief description of the breakpoint-2 </ins>
 <br>
-Continuing with the YouTube video tutorial, I refined the state machine logic in the GDScript by implementing behavior for both the "FALL" and "FLOOR" states. First, I right-clicked the "AnimatedSprite" child node, enabled "Access as Unique Name" from the drop-down menu, and then dragged the node into the script while holding the Ctrl key to create the reference. For the "FALL" state, I updated the script to apply gravity on each physics frame, allowing the player's downward velocity to increase naturally until it reaches a defined limit, while still permitting horizontal movement based on player input. I introduced constants such as "FALL_GRAVITY," "FALL_VELOCITY," and "WALK_VELOCITY" to organize and adjust movement values in the script. I also created a reusable "handle_movement" function to process horizontal input, apply left–right velocity, and flip the sprite direction, ensuring consistent movement logic across states. During the "FALL" state, gravity is applied to the player's vertical velocity while executing the "handle_movement" function, allowing the player to retain horizontal control while airborne. For the "FLOOR" state, I implemented logic to handle idle standing, walking, and transitions between grounded and airborne behavior using Godot's built-in floor detection. I configured the script to trigger the appropriate animations depending on whether movement input is present, switching between idle and walk animations while reusing the same "handle_movement" function for horizontal motion. I also established the core state transitions: the player switches to the "FALL" state when no longer on the floor and returns to the "FLOOR" state upon landing, ensuring responsive movement within the Godot physics system.
+Continuing with the YouTube video tutorial, I refined the state machine logic in the GDScript by implementing behavior for both the "FALL" and "FLOOR" states. First, I right-clicked the "AnimatedSprite" child node, enabled "Access as Unique Name" from the drop-down menu, and then dragged the node into the script while holding the Ctrl key to create the reference. For the "FALL" state, I updated the script to apply gravity on each physics frame, allowing the player's downward velocity to increase naturally until it reaches a defined limit, while still permitting horizontal movement based on player input. I introduced constants such as "FALL_GRAVITY," "FALL_VELOCITY," and "WALK_VELOCITY" to organize and adjust movement values in the script. I also created a reusable "handle_movement" function to process horizontal input, apply left–right velocity, and flip the sprite direction, ensuring consistent movement logic across states. During the "FALL" state, gravity is applied to the player's vertical velocity while executing the "handle_movement" function, allowing the player to retain horizontal control while airborne. For the "FLOOR" state, I implemented logic to handle idle standing, walking, and transitions between grounded and airborne behavior using Godot's built-in floor detection. I configured the script to trigger the appropriate animations depending on whether movement input is present, switching between idle and walk animations while reusing the same "handle_movement" function for horizontal motion. I also established the core state transitions, allowing the player to enter the "FALL" state when airborne and return to the "FLOOR" state upon landing, ensuring smooth movement within Godot's physics system.
 
 <ins> Brief description of the breakpoint-3 </ins>
 <br>
@@ -58,7 +58,7 @@ To implement the "FLOAT" state in my Godot project, inspired by the "Drifter's C
 
 <ins> Brief description of the breakpoint-6 </ins>
 <br>
-To implement the "LEDGE_CLIMB" state in my Godot project, I began by setting up crucial components in the "PlayerController" scene. This process involved adding a "RayCast2D" node named "LedgeClimbRayCast," positioned diagonally in front of the player for precise ledge detection, and another "RayCast2D" node called "LedgeSpaceRayCast," placed next to the player and pointing upward to verify clear space for climbing, making it slightly taller than the collider. Both "RayCast2D" nodes and the "PlayerCollider" node were set to "Access as Unique Name" in the drop-down menu, then dragged into the script, and then I introduced a "facing_direction" variable initialized to 1.0. In the "_ready" function, I configured the "LedgeClimbRayCast" to ignore the player's own collision shape to prevent self-detection issues. Upon entering the "LEDGE_CLIMB" state, the script automatically activates the "ledge_climb" animation, sets the player's velocity to zero, precisely aligns the player's Y position with the detected ledge's collision point, and resets the "can_double_jump" variable to true. I updated the "handle_movement" function to dynamically adjust the "facing_direction" based on player input and correctly update each "RayCast2D" node's X position and target position, forcing a refresh to keep the collision data current during gameplay.
+To implement the "LEDGE_CLIMB" state in my Godot project, I began by setting up crucial components in the "PlayerController" scene. This process involved adding a "RayCast2D" node named "LedgeClimbRayCast," positioned diagonally in front of the player for precise ledge detection, and another "RayCast2D" node called "LedgeSpaceRayCast," placed next to the player and pointing upward to verify clear space for climbing, making it slightly taller than the collider. The "RayCast2D" nodes and the "PlayerCollider" node were configured with "Access as Unique Name" from the drop-down menu, then linked within the script to introduce a facing_direction variable initialized to 1.0. In the "_ready" function, I configured the "LedgeClimbRayCast" to ignore the player's own collision shape, preventing self-detection issues. Upon entering the "LEDGE_CLIMB" state, the script automatically activates the "ledge_climb" animation, sets the player's velocity to zero, precisely aligns the player's Y position with the detected ledge's collision point, and resets the "can_double_jump" variable to true. I updated the "handle_movement" function to dynamically adjust the "facing_direction" based on player input and correctly update each "RayCast2D" node's X position and target position, forcing a refresh to keep the collision data current during gameplay.
 
 <ins> Brief description of the breakpoint-7 </ins>
 <br>
@@ -66,7 +66,7 @@ Furthermore, I implemented four essential helper functions: "is_input_toward_fac
 
 <ins> Brief description of the breakpoint-8 </ins>
 <br>
-Finishing with the YouTube video tutorial, I implemented the "LEDGE_JUMP" state, which involved defining a constant named "LEDGE_JUMP_VELOCITY" with a value of -500.0, which controls the upward force when the user presses the jump button. When the player enters the "LEDGE_JUMP" state, the script reuses the "double_jump" animation for visual effect and sets the player's Y velocity to "LEDGE_JUMP_VELOCITY." Similar to the "DOUBLE_JUMP" state, its logic gets incorporated into the "process_state" function as a condition alongside the normal "JUMP" state. The primary transition into this state starts from the "LEDGE_CLIMB" state, activated by an "elif" statement that checks when the player presses the jump button. If a jump cancel occurs, the "progress" variable shows how far the player is in the climb animation. The "progress" value scales the "ledge_climb_offset" horizontal value to determine the player's jump distance from the ledge, and then the state transitions to "LEDGE_JUMP" rather than reverting to "FLOOR." Having completed a robust animated character controller with horizontal walking, falling, single jumping, double jumping, floating, ledge climbing, and ledge jumping, the next part of this project will introduce additional special moves, including wall sliding, wall jumping, wall climbing, sprinting, and dashing.
+Finishing with the YouTube video tutorial, I implemented the "LEDGE_JUMP" state, which involved defining a constant named "LEDGE_JUMP_VELOCITY" with a value of -500.0, which controls the upward force when the user presses the jump button. When the player enters the "LEDGE_JUMP" state, the script reuses the "double_jump" animation for visual effect and sets the player's Y velocity to "LEDGE_JUMP_VELOCITY." Similar to the "DOUBLE_JUMP" state, its logic gets incorporated into the "process_state" function as a condition alongside the normal "JUMP" state. The primary transition into this state starts from the "LEDGE_CLIMB" state, activated by an "elif" statement that checks when the player presses the jump button. If a jump cancel occurs, the "progress" variable indicates how far the player has advanced through the climb animation. The "progress" value scales the "ledge_climb_offset" horizontal value to determine the player's jump distance from the ledge, and then the state transitions to "LEDGE_JUMP" rather than reverting to "FLOOR." Having completed a robust animated character controller with horizontal walking, falling, single jumping, double jumping, floating, ledge climbing, and ledge jumping, the next part of this project will introduce additional special moves, including wall sliding, wall jumping, wall climbing, sprinting, and dashing.
 
 <ins> **Step 3: Task specification** </ins>
 <br>
@@ -86,11 +86,11 @@ In the Godot Engine, create a playable 2D game with a resolution of 1152 × 648 
 
 The physics is configured with a gravity value of 980 pixels per second squared, ensuring that the player character responds naturally to falls and jumps in the game environment. The Input Map defines custom input actions to control the player character, with "move_left" bound to the A key for leftward movement, "move_right" bound to the D key for rightward movement, "jump" bound to the Space key for jumping, and "sprint" bound to the Shift key for sprinting. Player movement responds to input as follows: the A key moves the player left, the D key moves the player right, pressing the Space key once performs a normal single jump, pressing it twice performs a double jump, and pressing it a third time, holding the key, causes the player to float and descend slowly. Pressing and holding the Space key causes the player character to jump higher, and releasing all input keys immediately stops player movement during gameplay. The movement functionally allows the player character to briefly jump after walking off a ledge, commonly known as coyote time, and imposes a cooldown that limits how frequently the player can float. The floating mechanic grants the player character the ability to pause and hover while airborne, and to repeat this action for precise midair control and maneuverability. 
 
-The player controller incorporates ledge detection to identify climbable surfaces and confirm that adequate open space exists above or behind the player character to allow safe movement. If the required gameplay conditions have been satisfied, the character can automatically climb over the ledge or quickly press the Space key during the ledge climb to perform a ledge jump without colliding with surrounding geometry. The specific method for detecting ledges is flexible, but the climbing and ledge-jumping behavior must work correctly with the state machine and be clearly observable during gameplay. The player character must have properly configured collision to ensure consistent interaction with the environment, allowing it to remain supported by platforms, stop at walls, and avoid passing through solid terrain during gameplay. The game camera must ensure the player character remains consistently visible on-screen within the viewport as the player moves, preventing unintended off-screen positioning and maintaining continuous visibility throughout gameplay. A state machine implemented in the script controls transitions between movement states, including falling, walking, jumping, double jumping, floating, ledge climbing, and ledge jumping. Each movement state responds correctly to the defined constants, timers, raycasts, and input actions, ensuring consistent behavior while allowing the gameplay to be easily tuned and adjusted.
+The player controller incorporates ledge detection to identify climbable surfaces and confirm that adequate open space exists above or behind the player character to allow safe movement. If the required gameplay conditions have been satisfied, the character can automatically climb over the ledge or quickly press the Space key during the ledge climb to perform a ledge jump without colliding with surrounding geometry. The specific method for detecting ledges is flexible, but the climbing and ledge-jumping behavior must work correctly with the state machine and be clearly observable during gameplay. The player character must have properly configured collision to ensure consistent interaction with the environment, allowing it to remain supported by platforms, stop at walls, and avoid passing through solid terrain during gameplay. The game camera must ensure the player character remains consistently visible on-screen within the viewport as the player moves, preventing unintended off-screen positioning and maintaining continuous visibility throughout gameplay. A state machine implemented in the script manages transitions between movement states, including falling, walking, jumping, double-jumping, floating, ledge climbing, and ledge jumping. Each movement state responds correctly to the defined constants, timers, raycasts, and input actions, ensuring consistent behavior while allowing the gameplay to be easily tuned and adjusted.
 
 <ins> Rubric Items </ins>
 <br>
-1. The project's viewport width value is 1152. 
+1. The project's viewport width value is 1152.
 - Confirm that the Viewport Width value is equal to 1152 by navigating to "Project Settings," then "Display," and then "Window."
 - The prompt requires the project's resolution to be 1152 x 648, and because these values are adjustable individually, each should receive partial credit.
 
@@ -112,11 +112,11 @@ The player controller incorporates ledge detection to identify climbable surface
 
 6. The Input Map includes a "move_left" action bound to the A key.
 - Confirm an input action exists with the A key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
-- The prompt requires that pressing the A key should cause the player character to move left.
+- The prompt requires that the A key be assigned as a keyboard input action to move the player character to the left.
 
 7. The Input Map includes a "move_right" action bound to the D key.
 - Confirm an input action exists with the D key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
-- The prompt requires that pressing the D key should cause the player character to move right.
+- The prompt requires that the D key be assigned as a keyboard input action to move the player character to the right.
 
 8. The Input Map includes a "jump" action bound to the Space key.
 - Confirm an input action exists with the Space key by navigating to "Project Settings" and then to "Input Map" to see the "Action" list.
@@ -128,11 +128,11 @@ The player controller incorporates ledge detection to identify climbable surface
 
 10. Pressing the A key moves the player character to the left.
 - Run the main scene and press the A key to observe the sprite asset perform leftward movement.
-- Pressing the A key should cause the sprite asset to move left, as required by the prompt.
+- The prompt requires that pressing the A key should cause the player character to move left.
 
 11. Pressing the D key moves the player character to the right.
 - Run the main scene and press the D key to observe the sprite asset perform rightward movement.
-- Pressing the D key should cause the sprite asset to move right, as required by the prompt.
+- The prompt requires that pressing the D key should cause the player character to move right.
 
 12. Pressing the Space key makes the player character jump up.
 - Run the main scene and press the Space key to observe the sprite asset jump upward.
@@ -144,7 +144,7 @@ The player controller incorporates ledge detection to identify climbable surface
 
 14. Pressing the Space key thrice makes the player character float down.
 - Run the main scene and press the jump key three times, holding it down on the third press to make the player character float down.
-- The prompt requires that pressing the Space key three times and holding it on the third press should cause the player to float down.
+- The prompt requires the player character to float downward when the Space key is pressed three times and held on the third press.
 
 15. Holding the Space key makes the player jump higher than tapping it.
 - Run the main scene, quickly tap the Space key for a normal jump, and then press and hold the Space key for a high jump.
@@ -164,11 +164,11 @@ The player controller incorporates ledge detection to identify climbable surface
 
 19. The player character can briefly jump right after walking off any ledge.
 - Run the main scene, walk off any platform, then quickly press the Space key to perform a jump right after leaving the ledge.
-- The prompt requires that the player character have a coyote timer to allow players to jump fairly immediately after walking off a ledge.
+- The prompt requires the player character to have a coyote timer, allowing players to jump fairly immediately after walking off a ledge.
 
 20. The player character can repeatedly pause and float while airborne.
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
-- The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
+- The prompt requires the player character to float multiple times while airborne, with the ability controlled by a cooldown mechanic.
 
 21. The player character properly collides with the level environment.
 - Run the main scene and move the player across platforms and into walls, confirming the character does not pass through solid terrain.
@@ -184,39 +184,41 @@ The player controller incorporates ledge detection to identify climbable surface
 
 24. A "FALL_GRAVITY" constant controls the player's gravity while falling.
 - Inspect the GDScript code for an unchangeable constant named "FALL_GRAVITY" affecting the falling gravity of the player character.
-- The prompt requires the GDScript code to define falling gravity as an unchangeable constant, but configurable for movement balance.
+- The prompt requires the GDScript code to implement falling gravity as a constant parameter that remains unchanged during gameplay.
 
 25. A "FALL_VELOCITY" constant controls the player's falling speed.
 - Inspect the GDScript code for an unchangeable constant named "FALL_VELOCITY" affecting the fall speed of the player character.
-- The prompt requires the GDScript code to define falling velocity as an unchangeable constant, but configurable for movement balance.
+- The prompt requires the GDScript code to implement falling velocity as a constant parameter that remains unchanged during gameplay.
 
 26. A "WALK_VELOCITY" constant controls the player's walking speed.
 - Inspect the GDScript code for an unchangeable constant named "WALK_VELOCITY" affecting the walk speed of the player character.
-- The prompt requires the GDScript code to define walk velocity as an unchangeable constant, but configurable for movement balance.
+- The prompt requires the GDScript code to implement walk velocity as a constant parameter that remains unchanged during gameplay.
 
 27. A "JUMP_VELOCITY" constant controls the player's initial jump force.
 - Inspect the GDScript code for an unchangeable constant named "JUMP_VELOCITY" affecting the jump speed of the player character.
-- The prompt requires the GDScript code to define jump velocity as an unchangeable constant, but configurable for movement balance.
+- The prompt requires the GDScript code to implement jump velocity as a constant parameter that remains unchanged during gameplay.
 
 28. A "JUMP_DECELERATION" constant controls the jump slowdown rate.
 - Inspect the GDScript code for an unchangeable constant named "JUMP_DECELERATION" affecting the jump slowdown of the player.
-- The prompt requires the GDScript code to define jump deceleration as an unchangeable constant, but configurable for jumping control.
+- The prompt requires the GDScript code to have jump deceleration as a constant parameter that remains unchanged during gameplay.
 
 29. A "DOUBLE_JUMP_VELOCITY" constant controls double jump force.
 - Inspect the GDScript code for an unchangeable constant named "DOUBLE_JUMP_VELOCITY" affecting the double jump speed.
-- The prompt requires the GDScript code to define the double jump velocity as an unchangeable constant, but configurable for jumping.
+- The prompt requires the GDScript code to define the double-jump velocity as an unchangeable constant, but configurable for jumping.
 
 30. A "FLOAT_GRAVITY" constant controls the player's floating gravity.
 - Inspect the GDScript code for an unchangeable constant named "FLOAT_GRAVITY" affecting the float gravity of the player character.
-- The prompt requires the GDScript code to define the float gravity as an unchangeable constant, but configurable for movement balance.
+- The prompt requires the GDScript code to define a constant float gravity value that remains unchanged during gameplay.
 
 31. A "FLOAT_VELOCITY" constant controls vertical speed while floating.
 - Inspect the GDScript code for an unchangeable constant named "FLOAT_VELOCITY" affecting the floating speed of the player.
-- The prompt requires the GDScript code to define float velocity as an unchangeable constant, but configurable for movement balance.
+- The prompt requires the GDScript code to define a constant float velocity value that remains fixed during gameplay.
 
 32. A "LEDGE_JUMP_VELOCITY" constant controls the ledge jump force.
 - Inspect the GDScript code for an unchangeable constant named "LEDGE_JUMP_VELOCITY" affecting the player's ledge jump speed.
-- The prompt requires the GDScript code to define the ledge jump velocity as an unchangeable constant, but configurable for jumping.
+- The prompt requires the GDScript code to have ledge jump velocity as a constant parameter that remains unchanged during gameplay.
+<br>
+Godot - Full Vertical Slice (Game Prototype) - Finished prompt creation.
 
 ---
 
@@ -228,7 +230,7 @@ This video tutorial guides viewers through building a 2D player controller inspi
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
-![Sprite Asset](assets/art/2d/player/stick_figure/sf_walk_pixel.png)
+![Sprite Asset](assets/stick_figure/sf_walk_pixel.png)
 
 # Create a Godot task #
 <ins> What application is this task for? </ins>
@@ -250,7 +252,7 @@ Reminder on the difference between reference and starting state files:
 <br>
 We are beginning development of the movement system for our 2D pixel-art platformer prototype, with an emphasis on designing smooth, responsive controls for movement and collision handling to ensure an engaging gameplay experience. Your task is to build upon this starting foundation by implementing an operational player controller, core movement mechanics, and a functional state machine. The system should enable responsive, fluid platforming by carefully configuring physics behavior and control inputs while preserving the visual clarity expected in a pixel-art platformer. The scene background should use a dark gray color, appropriate for a simple testing environment, and the project should apply design settings that preserve the crisp visual appearance for all pixel-art asset textures. 
 
-The player character should be controllable using standard keyboard inputs: A to move left, D to move right, and the Space key to jump. Implement the movement controller to support basic platforming mechanics, enabling the player character to interact dynamically with the level environment. The system must include properly configured gravity physics that produce a natural, consistent downward pull during gameplay and have the player character visually face the correct direction as it moves. Overall, the movement system should establish a responsive and reliable foundation for platforming, aligning physics behavior, player input, and visual feedback to support a polished gameplay experience. The new controller system for this game should include the following movement abilities:
+The player character should respond to standard keyboard controls, using A to move left, D to move right, and Space to jump. Implement the movement controller to support basic platforming mechanics, enabling the player character to interact dynamically with the level environment. The system must include properly configured gravity physics that produce a natural, consistent downward pull during gameplay and have the player character visually face the correct direction as it moves. Overall, the movement system should establish a responsive and reliable foundation for platforming, aligning physics behavior, player input, and visual feedback to support a polished gameplay experience. The new controller system for this game should include the following movement abilities and mechanics:
 
 - Horizontal movement allows the player character to walk left.
 - Horizontal movement allows the player character to walk right.
@@ -265,7 +267,7 @@ The player character should be controllable using standard keyboard inputs: A to
 
 The player character should stop moving when movement input is released, retain the ability to jump briefly after stepping off a platform, and be able to activate floating multiple times while airborne according to the intended cooldown behavior. The movement system must incorporate new jump mechanics to enhance player control during traversal, as jumping will be the most frequently used action for getting across the level. Pressing the Space key once makes the player character jump, pressing it a second time in midair triggers a double jump, and pressing it a third time while holding it enables slow floating. The jump system should support variable jump height, allowing the character to reach greater heights when the Space key is held down rather than tapped quickly. Furthermore, the player controller must interact properly with the level environment by colliding with platforms and walls, ensuring the character cannot pass through solid terrain. 
 
-When the character approaches a climbable ledge, defined as being close to an edge without any obstruction, the system should automatically allow them to climb over it upon close contact. During the ledge-climbing action, pressing the Space key will enable the player character to perform a ledge jump, propelling them upward from the ledge. The player character must remain visible and tracked in the camera view throughout gameplay to ensure a consistent on-screen experience. The movement should feel responsive, fluid, and coherent during gameplay, avoiding stickiness or input lag while ensuring smooth transitions between actions. The player character should transition smoothly between movement states, including walking, jumping, double jumping, falling, floating, and ledge traversal.
+When the character approaches a climbable ledge, defined as being close to an edge without any obstruction, the system should automatically allow them to climb over it upon close contact. During the ledge-climbing action, pressing the Space key will enable the player character to perform a ledge jump, propelling them upward from the ledge. The player character must remain visible and tracked in the camera view throughout gameplay to ensure a consistent on-screen experience. The movement should feel responsive, fluid, and coherent during gameplay, avoiding stickiness or input lag while ensuring smooth transitions between actions. The player character should transition smoothly between movement states, including walking, jumping, double jumping, falling, floating, and ledge traversal throughout gameplay.
 
 <ins> Which of the following best fits this task? </ins>
 <br>
@@ -273,7 +275,7 @@ Additional work on an existing very large project
 
 <ins> How long would you anticipate an 'Employee' to complete this task? (in hours) </ins>
 <br>
-1
+2
 
 ### **Starting state** ###
 Please describe and include below any information about the starting state of this project:
@@ -286,7 +288,7 @@ Reminder on the difference between the starting state and the reference files:
 
 <ins> Starting state description </ins>
 <br>
-The starting state for this task is a preconfigured Godot Engine project layout that provides a foundational framework for a 2D platformer. It includes a structured project setup with organized folders for assets, scenes, scripts, and resources, as well as a functional test level featuring green and brown textures to evaluate player movement and interactions. The player character is represented by a blue stick-figure sprite set, with individual animation frames for idle, walking, running, jumping, double jumping, floating, ledge climbing, and ledge jumping. These assets not only provide visual support for validating movement in the environment but also serve as a foundation for assigning and testing keybindings, ensuring that each input corresponds accurately to the intended animation and action. When running the starting state, the project only displays the level and spawns the player character with its collision body, but movement and other gameplay mechanics remain inactive. The current player controller script and scene need modification and expansion to implement the basic movement systems effectively, which requires familiarity with GDScript programming, node composition, and the ability to maintain an extensible architecture.
+The starting state for this task is a preconfigured Godot Engine project layout that provides a foundational framework for a 2D platformer. It includes a structured project setup with organized folders for assets, scenes, scripts, and resources, as well as a functional test level featuring green and brown textures to evaluate player movement and interactions. The player character uses a blue stick-figure sprite set with dedicated animation frames for idle, walking, running, jumping, double-jumping, floating, ledge-climbing, and ledge-jumping actions. These assets not only provide visual support for validating movement in the environment but also serve as a foundation for assigning and testing keybindings, ensuring that each input corresponds accurately to the intended animation and action. When running the starting state, the project only displays the level and spawns the player character with its collision body, but movement and other gameplay mechanics remain inactive. The current player controller script and scene need modification and expansion to implement the basic movement systems effectively, which requires familiarity with GDScript programming, node composition, and the ability to maintain an extensible architecture.
 
 ### **Overall context** ###
 Finally, include context on this task and why it is realistic and representative of real-life work:
@@ -337,7 +339,7 @@ This task represents a realistic and appropriate assignment for a junior-level d
 
 10. The player character can repeatedly pause and float while airborne.
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
-- The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
+- The prompt requires the player character to support multiple airborne floating activations, regulated by a cooldown system.
 
 11. The player character can climb over any ledge when in close contact.
 - Run the main scene, move close to any ledge in the level, and observe the player character automatically perform a ledge climb.
@@ -360,7 +362,7 @@ This task represents a realistic and appropriate assignment for a junior-level d
 - The prompt requires the player character to have a functional body collision to interact accurately with the level environment.
 
 16. The player character correctly animates between movement states.
-- Run the main scene and observe the player character as it falls, walks, jumps, double jumps, floats, ledge climbs, and ledge jumps.
+- Run the main scene and verify that the player character can fall, walk, jump, double jump, float, climb ledges, and ledge jump.
 - The prompt requires a functioning state machine to manage the animations and player controller across all movement states.
 
 17. The player character faces the correct direction during movement.
@@ -368,10 +370,10 @@ This task represents a realistic and appropriate assignment for a junior-level d
 - The prompt requires that the player character visually face the direction of motion to reflect accurate orientation during gameplay.
 
 18. The camera follows the player character smoothly during gameplay.
-- Run the main scene and move the player character across the level to confirm that the game camera smoothly tracks the player.
+- Run the main scene and move the player character across the level to confirm that the game camera accurately tracks the player.
 - The prompt requires smooth camera tracking to maintain a stable and consistent view of the player character throughout gameplay.
 <br>
-Godot - https://feather.openai.com/tasks/9a1bbcdb-9924-411f-b871-9938ee7ca897/stage/prompt_creation - Finished prompt creation.
+Godot - Full Vertical Slice (Game Prototype) - Finished prompt creation.
 
 ---
 
@@ -383,7 +385,7 @@ This video tutorial guides viewers through building an advanced 2D player contro
 # Assets #
 [Silksong Movement Tutorial Template Files](https://icyengine.itch.io/silksong-movement-tutorial) by [IcyEngine](https://icyengine.itch.io/) ([YouTube](https://www.youtube.com/@IcyEngine))
 
-![Sprite Asset](assets/art/2d/player/stick_figure/sf_run_pixel.png)
+![Sprite Asset](assets/stick_figure/sf_run_pixel.png)
 
 # Create a Godot task #
 <ins> What application is this task for? </ins>
@@ -405,17 +407,17 @@ Reminder on the difference between reference and starting state files:
 <br>
 We are continuing development of the movement system for our 2D pixel-art platformer prototype. The current build includes a functional player controller and a foundational state machine from an earlier stage, which manages the character's core movement logic and primary gameplay interactions. Your task is to extend and refine the existing system by implementing advanced traversal mechanics inspired by Hornet's movement style from Hollow Knight: Silksong. The updated system should support responsive platformer gameplay by properly configuring the physics behavior and control inputs, while also maintaining the visual clarity expected in a pixel-art platformer experience. 
 
-The scene background should use a dark gray tone appropriate for a simple testing environment, and the project should use design settings that preserve the crisp visual appearance of pixel-art assets. The player character should be controllable with standard keyboard inputs: A to move left, D to move right, Space to jump, and Shift to sprint. Extend the movement controller to support a set of advanced platforming mechanics that allow the player character to interact dynamically with the level environment. The updated movement system should include the following movement abilities:
+The scene background should use a dark gray tone appropriate for a simple testing environment, and the project should use design settings that preserve the crisp visual appearance of pixel-art assets. The player character should be controllable with standard keyboard inputs: A to move left, D to move right, Space to jump, and Shift to sprint. Enhance the movement controller with advanced platforming mechanics that enable the player character to interact dynamically with the game environment. The updated movement system should include the following movement abilities and mechanics:
 
 - Wall sliding while gripping against any flat vertical wall surface.
 - Wall jumping that propels the player character away from the wall.
 - Wall climbing enables the player character to scale vertical walls.
 - A directional dash movement for short bursts of horizontal speed.
-- Running at a sprinting speed allows for faster horizontal movement.
+- Running allows faster horizontal movement across the environment.
 - Directional turning behavior that transitions smoothly while moving.
 - A refined float state that allows the character to descend smoothly.
 
-The character should stop moving when movement input is released, retain the ability to jump briefly after stepping off a platform, and be able to activate floating multiple times while airborne according to the intended cooldown behavior. The movement system should also support additional jump mechanics that improve player control during traversal. Pressing the Space key once should allow the player character to jump; pressing it again while airborne should trigger a double jump; and pressing it a third time should allow the player character to float slowly. The jump system should also support variable jump height, allowing the character to jump higher when the Space key is held compared to a quick tap. The player controller must properly interact with the level environment by colliding with platforms and walls so the character cannot pass through solid terrain. When the character reaches a climbable ledge (i.e., where the player is close to an edge and nothing is in the way of them climbing up it), the system should automatically allow the character to climb over it when in close contact.
+The character should stop moving when movement input is released, retain the ability to jump briefly after stepping off a platform, and be able to activate floating multiple times while airborne according to the intended cooldown behavior. The movement system should also support additional jump mechanics that improve player control during traversal. Pressing the Space key once should allow the player character to jump; pressing it again while airborne should trigger a double jump; and pressing it a third time should allow the player character to float slowly. The jump system should also support variable jump height, allowing the character to jump higher when the Space key is held compared to a quick tap. The player controller must interact properly with the level environment, colliding with platforms and walls to prevent the character from passing through solid terrain. When the character comes into close contact with a climbable ledge, and there are no obstacles preventing movement above it, the system should automatically allow the character to climb over the edge.
 
 During this ledge climbing motion, pressing the Space key should allow the character to perform a ledge jump that propels the character upward from the ledge. The character should also remain visible in the camera view during gameplay so the player is consistently displayed on-screen. The character should transition smoothly between movement states such as walking, jumping, double jumping, falling, floating, wall interactions, and ledge traversal, with behavior that feels responsive and consistent during gameplay. When completed, the player character should be able to navigate the provided platforming test environment while demonstrating all advanced movement mechanics functioning smoothly together. The implementation must maintain a modular design to allow the addition of new abilities and gameplay features in future development without requiring major architectural changes.
 
@@ -425,7 +427,7 @@ Additional work on an existing very large project
 
 <ins> How long would you anticipate an 'Employee' to complete this task? (in hours) </ins>
 <br>
-1
+2
 
 ### **Starting state** ###
 Please describe and include below any information about the starting state of this project:
@@ -438,7 +440,7 @@ Reminder on the difference between the starting state and the reference files:
 
 <ins> Starting state description </ins>
 <br>
-The starting state for this task is an existing Godot Engine project that serves as a foundational framework, containing preconfigured assets, a functional test level, and a script system that supports basic player movement and interactions, providing a structured environment for implementing more advanced gameplay mechanics. The current build includes a basic player controller and an initial state machine from the previous phase that manages essential character movement and interactions. This project features a basic platformer test environment for evaluating movement mechanics and interactions, along with an original stick-figure sprite representing the player character, providing a simple visual reference for implementing and testing character animations and advanced gameplay features. These template files and the state machine system provide the foundation for implementing the advanced movement mechanics outlined in the task prompt, which requires familiarity with GDScript programming and integrating new nodes into the script to create a functional game. This project also features a dedicated player controller script that manages the character's movement logic and state machine transitions, which needs expansion with new and updated code to implement advanced movement features that fulfill the task requirements. The assets folder also contains all animation frames for each movement action, showcasing advanced movements and enabling their implementation in the script.
+The starting state for this task is an existing Godot Engine project that serves as a foundational framework, containing preconfigured assets, a functional test level, and a script system that supports basic player movement and interactions, providing a structured environment for implementing more advanced gameplay mechanics. The current build includes a basic player controller and an initial state machine from the previous phase that manages essential character movement and interactions. This project features a basic platformer test environment for evaluating movement mechanics and interactions, along with an original stick-figure sprite representing the player character, providing a simple visual reference for implementing and testing character animations and advanced gameplay features. These template files and the state machine system provide the foundation for implementing the advanced movement mechanics outlined in the task prompt, which requires a solid knowledge of GDScript programming and adding nodes to create a functional game. This project also features a dedicated player controller script that manages the character's movement logic and state machine transitions, which needs expansion with new and updated code to implement the advanced movement features and satisfy the task requirements. The assets folder also contains all animation frames for each movement action, showcasing advanced movements and enabling their implementation in the script.
 
 ### **Overall context** ###
 Finally, include context on this task and why it is realistic and representative of real-life work:
@@ -469,15 +471,15 @@ This task is representative of work commonly assigned to a junior-level develope
 
 5. The player double jumps when pressing the Space key while airborne.
 - Run the main scene, jump and press the Space key while airborne, and observe that the player character double jumps in the level.
-- The prompt requires that pressing the Space key twice while airborne causes the player character to double-jump upward.
+- The prompt requires that pressing the Space key twice while airborne causes the player character to double jump upward.
 
 6. The player character can quickly sprint when pressing the Shift key.
 - Run the main scene, press and hold down the Shift key while moving left or right, and verify that the character starts sprinting.
-- The task prompt requires that the player character can sprint to increase horizontal movement speed throughout the environment.
+- The task prompt requires that the player character be able to sprint, increasing horizontal movement speed throughout the environment.
 
 7. The player character can slide downward against any vertical wall.
 - Run the main scene, press the player character against any vertical wall, and verify that the character begins wall-sliding downward.
-- The task prompt requires that the player character can wall slide and descend when pressed against any vertical wall surface.
+- The task prompt requires the player character to wall slide and descend when pressed against a vertical wall.
 
 8. The player character can jump away from vertical walls while sliding.
 - Run the main scene, press the Space key while against any vertical wall, and verify that the character can jump away from the wall.
@@ -485,7 +487,7 @@ This task is representative of work commonly assigned to a junior-level develope
 
 9. The player character can climb upward along any vertical wall surface.
 - Run the main scene, press the player character against any vertical wall, and verify that the character can climb the wall by jumping up.
-- The task prompt requires that the player character can wall-climb and ascend when jumping upward against any vertical wall surface.
+- The task prompt requires that the player character be able to wall-climb and ascend when jumping upward against any vertical wall.
 
 10. The player character can perform a short directional dash movement.
 - Run the main scene, press the Shift key while moving left or right, and verify that the character performs a short burst of quick speed.
@@ -509,7 +511,7 @@ This task is representative of work commonly assigned to a junior-level develope
 
 15. The player character can repeatedly pause and float while airborne.
 - Run the main scene, double jump off a high platform, and while in midair, repeatedly press and hold the Space key to float continually.
-- The prompt requires that the player character can pause and float multiple times while airborne to use the cooldown time functionality.
+- The prompt requires the player character to pause and float multiple times while airborne to use the cooldown time functionality.
 
 16. The player character properly collides with the level environment.
 - Run the main scene and move the player across platforms and into walls, confirming the character does not pass through solid terrain.
@@ -535,4 +537,4 @@ This task is representative of work commonly assigned to a junior-level develope
 - Run the main scene, quickly press the Space key during a ledge climb, and observe the player character perform a ledge jump.
 - The prompt requires that the player character can jump over any ledge when pressing the Space key during the ledge climb.
 <br>
-Godot - https://feather.openai.com/tasks/ec0e1bf8-8038-4773-aa40-63aff5cc4cec/stage/prompt_creation - Finished prompt creation.
+Godot - Full Vertical Slice (Game Prototype) - Finished prompt creation.

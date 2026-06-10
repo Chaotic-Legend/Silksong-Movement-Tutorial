@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxwy5pj77pbm"
-path="res://.godot/imported/sf_wall_climb_pixel.png-3c232b27a66a5cd67822c59e3e5a8abd.ctex"
+path="res://.godot/imported/sf_wall_climb_pixel.png-2e522ebf569108c5179913af14613609.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/player/stick_figure/sf_wall_climb_pixel.png"
-dest_files=["res://.godot/imported/sf_wall_climb_pixel.png-3c232b27a66a5cd67822c59e3e5a8abd.ctex"]
+source_file="res://assets/stick_figure/sf_wall_climb_pixel.png"
+dest_files=["res://.godot/imported/sf_wall_climb_pixel.png-2e522ebf569108c5179913af14613609.ctex"]
 
 [params]
 

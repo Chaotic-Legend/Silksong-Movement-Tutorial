@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dahf072t5xivo"
-path="res://.godot/imported/sf_float_pixel.png-bd385610a75fe3d73d9f539a958a710a.ctex"
+uid="uid://boohpmqvf6di0"
+path="res://.godot/imported/sf_jump+fall_pixel.png-71a3c9604ffb564e14dea258c0194be2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/player/stick_figure/sf_float_pixel.png"
-dest_files=["res://.godot/imported/sf_float_pixel.png-bd385610a75fe3d73d9f539a958a710a.ctex"]
+source_file="res://assets/stick_figure/sf_jump+fall_pixel.png"
+dest_files=["res://.godot/imported/sf_jump+fall_pixel.png-71a3c9604ffb564e14dea258c0194be2.ctex"]
 
 [params]
 

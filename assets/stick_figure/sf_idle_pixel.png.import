@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddtrs43kgv7f6"
-path="res://.godot/imported/sf_double_jump_pixel.png-d11ac085b1e549a0d0c8ad1c3d97256b.ctex"
+uid="uid://d28nsiygjnfhv"
+path="res://.godot/imported/sf_idle_pixel.png-6b4d8449dc5cffaf30c25c8a62b04cff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/player/stick_figure/sf_double_jump_pixel.png"
-dest_files=["res://.godot/imported/sf_double_jump_pixel.png-d11ac085b1e549a0d0c8ad1c3d97256b.ctex"]
+source_file="res://assets/stick_figure/sf_idle_pixel.png"
+dest_files=["res://.godot/imported/sf_idle_pixel.png-6b4d8449dc5cffaf30c25c8a62b04cff.ctex"]
 
 [params]
 

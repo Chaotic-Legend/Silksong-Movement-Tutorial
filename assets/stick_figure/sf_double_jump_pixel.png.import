@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cifaeeg7lww0p"
-path="res://.godot/imported/sf_ledge_climb_pixel.png-bb5bc67b961f1486b2a5075d9cde327b.ctex"
+uid="uid://ddtrs43kgv7f6"
+path="res://.godot/imported/sf_double_jump_pixel.png-c34853f8034cf9afbbd16891c78f9fa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/player/stick_figure/sf_ledge_climb_pixel.png"
-dest_files=["res://.godot/imported/sf_ledge_climb_pixel.png-bb5bc67b961f1486b2a5075d9cde327b.ctex"]
+source_file="res://assets/stick_figure/sf_double_jump_pixel.png"
+dest_files=["res://.godot/imported/sf_double_jump_pixel.png-c34853f8034cf9afbbd16891c78f9fa0.ctex"]
 
 [params]
 

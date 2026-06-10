@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d28nsiygjnfhv"
-path="res://.godot/imported/sf_idle_pixel.png-df6358e9e502ce596930e2e98f008918.ctex"
+uid="uid://daxcrpk4rx63"
+path="res://.godot/imported/simple_terrain.png-82a4373c7909e71f41671d7b25a60e7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/player/stick_figure/sf_idle_pixel.png"
-dest_files=["res://.godot/imported/sf_idle_pixel.png-df6358e9e502ce596930e2e98f008918.ctex"]
+source_file="res://assets/terrain/simple_terrain.png"
+dest_files=["res://.godot/imported/simple_terrain.png-82a4373c7909e71f41671d7b25a60e7d.ctex"]
 
 [params]
 

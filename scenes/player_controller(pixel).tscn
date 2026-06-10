@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bimrbusqh5ikp"]
 
-[ext_resource type="Script" uid="uid://dfakw1cpmtonq" path="res://assets/scripts/player/player_controller(pixel).gd" id="1_70ait"]
-[ext_resource type="Texture2D" uid="uid://cifaeeg7lww0p" path="res://assets/art/2d/player/stick_figure/sf_ledge_climb_pixel.png" id="7_2q3ad"]
-[ext_resource type="Texture2D" uid="uid://boohpmqvf6di0" path="res://assets/art/2d/player/stick_figure/sf_jump+fall_pixel.png" id="16_cstwa"]
-[ext_resource type="Texture2D" uid="uid://dahf072t5xivo" path="res://assets/art/2d/player/stick_figure/sf_float_pixel.png" id="16_jsaws"]
-[ext_resource type="Texture2D" uid="uid://bekx56tcyygie" path="res://assets/art/2d/player/stick_figure/sf_dash_pixel.png" id="16_mpdld"]
-[ext_resource type="Texture2D" uid="uid://d28nsiygjnfhv" path="res://assets/art/2d/player/stick_figure/sf_idle_pixel.png" id="17_cstwa"]
-[ext_resource type="Texture2D" uid="uid://ddtrs43kgv7f6" path="res://assets/art/2d/player/stick_figure/sf_double_jump_pixel.png" id="17_o1e7l"]
-[ext_resource type="Texture2D" uid="uid://c34shve6v0lga" path="res://assets/art/2d/player/stick_figure/sf_run_pixel.png" id="18_mpdld"]
-[ext_resource type="Texture2D" uid="uid://xib6w4ava3op" path="res://assets/art/2d/player/stick_figure/sf_walk_pixel.png" id="19_o1e7l"]
-[ext_resource type="Texture2D" uid="uid://cxwy5pj77pbm" path="res://assets/art/2d/player/stick_figure/sf_wall_climb_pixel.png" id="28_ugyrt"]
-[ext_resource type="Texture2D" uid="uid://bpdrb62i7s2wv" path="res://assets/art/2d/player/stick_figure/sf_wall_slide_pixel.png" id="28_yeudl"]
+[ext_resource type="Script" uid="uid://dfakw1cpmtonq" path="res://scripts/player_controller(pixel).gd" id="1_70ait"]
+[ext_resource type="Texture2D" uid="uid://cifaeeg7lww0p" path="res://assets/stick_figure/sf_ledge_climb_pixel.png" id="7_2q3ad"]
+[ext_resource type="Texture2D" uid="uid://boohpmqvf6di0" path="res://assets/stick_figure/sf_jump+fall_pixel.png" id="16_cstwa"]
+[ext_resource type="Texture2D" uid="uid://dahf072t5xivo" path="res://assets/stick_figure/sf_float_pixel.png" id="16_jsaws"]
+[ext_resource type="Texture2D" uid="uid://bekx56tcyygie" path="res://assets/stick_figure/sf_dash_pixel.png" id="16_mpdld"]
+[ext_resource type="Texture2D" uid="uid://d28nsiygjnfhv" path="res://assets/stick_figure/sf_idle_pixel.png" id="17_cstwa"]
+[ext_resource type="Texture2D" uid="uid://ddtrs43kgv7f6" path="res://assets/stick_figure/sf_double_jump_pixel.png" id="17_o1e7l"]
+[ext_resource type="Texture2D" uid="uid://c34shve6v0lga" path="res://assets/stick_figure/sf_run_pixel.png" id="18_mpdld"]
+[ext_resource type="Texture2D" uid="uid://xib6w4ava3op" path="res://assets/stick_figure/sf_walk_pixel.png" id="19_o1e7l"]
+[ext_resource type="Texture2D" uid="uid://cxwy5pj77pbm" path="res://assets/stick_figure/sf_wall_climb_pixel.png" id="28_ugyrt"]
+[ext_resource type="Texture2D" uid="uid://bpdrb62i7s2wv" path="res://assets/stick_figure/sf_wall_slide_pixel.png" id="28_yeudl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2q3ad"]
 radius = 9.0
@@ -459,28 +459,29 @@ animations = [{
 "speed": 24.0
 }]
 
-[node name="PlayerController" type="CharacterBody2D" unique_id=2117675872]
+[node name="PlayerController" type="CharacterBody2D" unique_id=1932745292]
+process_mode = 1
 floor_snap_length = 10.0
 safe_margin = 0.2
 script = ExtResource("1_70ait")
 
-[node name="PlayerCollider" type="CollisionShape2D" parent="." unique_id=87555347]
+[node name="PlayerCollider" type="CollisionShape2D" parent="." unique_id=1679788803]
 unique_name_in_owner = true
 shape = SubResource("CapsuleShape2D_2q3ad")
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=2025332202]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=601180269]
 unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_aowxt")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.14241342
+frame_progress = 0.2207509
 
-[node name="CameraOffset" type="Node2D" parent="." unique_id=1487522664]
+[node name="CameraOffset" type="Node2D" parent="." unique_id=1679973407]
 position = Vector2(0, -33)
 
-[node name="Camera2D" type="Camera2D" parent="CameraOffset" unique_id=816945826]
+[node name="Camera2D" type="Camera2D" parent="CameraOffset" unique_id=1126579804]
 zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
@@ -492,24 +493,35 @@ drag_top_margin = 0.7
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
-[node name="CoyoteTimer" type="Timer" parent="." unique_id=281545573]
-unique_name_in_owner = true
-process_callback = 0
-wait_time = 0.2
-one_shot = true
-
-[node name="FloatCooldown" type="Timer" parent="." unique_id=2010763681]
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1400325414]
 unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.1
 one_shot = true
 
-[node name="LedgeClimbRayCast" type="RayCast2D" parent="." unique_id=953241319]
+[node name="FloatCooldown" type="Timer" parent="." unique_id=972204159]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
+[node name="LedgeClimbRayCast" type="RayCast2D" parent="." unique_id=791304352]
 unique_name_in_owner = true
 position = Vector2(3, -26)
 target_position = Vector2(10, 23)
 
-[node name="LedgeSpaceRayCast" type="RayCast2D" parent="." unique_id=1284576932]
+[node name="LedgeSpaceRayCast" type="RayCast2D" parent="." unique_id=989270449]
 unique_name_in_owner = true
 position = Vector2(-26, 24)
 target_position = Vector2(0, -49)
+
+[node name="WallSlideRayCast" type="RayCast2D" parent="." unique_id=1901745216]
+unique_name_in_owner = true
+position = Vector2(0, -10)
+target_position = Vector2(19, 0)
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=660488174]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.1
+one_shot = true

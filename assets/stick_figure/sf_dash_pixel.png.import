@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpdrb62i7s2wv"
-path="res://.godot/imported/sf_wall_slide_pixel.png-5ed229fb311cf4560e3a73e8107c7791.ctex"
+uid="uid://bekx56tcyygie"
+path="res://.godot/imported/sf_dash_pixel.png-589c9cc17ea768da83703d5ff97ab495.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2d/player/stick_figure/sf_wall_slide_pixel.png"
-dest_files=["res://.godot/imported/sf_wall_slide_pixel.png-5ed229fb311cf4560e3a73e8107c7791.ctex"]
+source_file="res://assets/stick_figure/sf_dash_pixel.png"
+dest_files=["res://.godot/imported/sf_dash_pixel.png-589c9cc17ea768da83703d5ff97ab495.ctex"]
 
 [params]
 
